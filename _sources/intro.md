@@ -3,7 +3,7 @@
 인과추론과 Real World Evidence (RWE) 가이드라인을 공부합니다. 자료는 깃허브 페이지 형태로 공유할 계획입니다.
 
 아래는 깃허브 페이지 링크입니다.
-https://pseudo-lab.github.io/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/intro.html
+https://causalinferencelab.github.io/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/intro.html
 
 ## 주차별 목표와 학습 내용
 💡 주차별 진행계획은 러너(스터디원)분들과 협의에 의해 변경될 수 있습니다.
