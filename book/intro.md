@@ -1,4 +1,5 @@
 # Bridging Causal Inference and Real-World Evidence: A Study of FDA and Other Regulatory Guidelines
+
 인과추론과 Real World Evidence (RWE) 가이드라인을 공부합니다. 자료는 깃허브 페이지 형태로 공유할 계획입니다.
 
 아래는 깃허브 페이지 링크입니다.
