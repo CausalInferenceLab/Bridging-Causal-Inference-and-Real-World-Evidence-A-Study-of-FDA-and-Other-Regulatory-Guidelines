@@ -18,6 +18,14 @@ pics 폴더에 이미지를 넣어주세요.
 
 이미지 파일을 pics에 넣어주세요.
 
+그리고 book 폴더에 있는 _toc.yml에 md 파일을 추가해주세요.
+
+format: jb-article
+root: intro
+sections:
+- file: docs/markdown-example
+- file: docs/addition_md
+
 그리고 pull request 해주세요. 제가 확인 후 merge 하겠습니다.
 
 사용이 어려우신 분들은 md 파일과 이미지 파일을 제게 주세요.
@@ -56,6 +64,14 @@ pics 폴더에 이미지를 넣어주세요.
 깃허브 사용이 편하신 분들은 내용이 들어있는 md 파일을 docs에 넣고,
 
 이미지 파일을 pics에 넣어주세요.
+
+그리고 book 폴더에 있는 _toc.yml에 md 파일(파일이름이 addition_md.md라고 한다면)을 추가해주세요.
+
+format: jb-article
+root: intro
+sections:
+- file: docs/markdown-example
+- file: docs/addition_md
 
 그리고 pull request 해주세요. 제가 확인 후 merge 하겠습니다.
 
