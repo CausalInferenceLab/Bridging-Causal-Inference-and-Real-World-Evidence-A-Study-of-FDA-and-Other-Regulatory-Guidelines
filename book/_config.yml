@@ -21,7 +21,7 @@ notebook_interface            : "notebook"
 
 # Launch button settings
 repository:
-  url                         : https://github.com/Pseudo-Lab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines
+  url                         : https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines
   path_to_book                : "mini_book"
 
 binder:
