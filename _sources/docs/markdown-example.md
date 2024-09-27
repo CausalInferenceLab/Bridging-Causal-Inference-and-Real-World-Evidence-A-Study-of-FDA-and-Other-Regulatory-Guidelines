@@ -18,7 +18,7 @@ pics 폴더에 이미지를 넣어주세요.
 
 이미지 파일을 pics에 넣어주세요.
 
-그리고 book 폴더에 있는 _toc.yml에 md 파일을 추가해주세요.
+그리고 book 폴더에 있는 _toc.yml에 md 파일(파일이름이 addition_md.md라고 한다면)을 추가해주세요.
 
 format: jb-article
 root: intro
