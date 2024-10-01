@@ -426,7 +426,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(E[Y|T=1] - E[Y|T=0] = \underbrace{E[Y_1 - Y_0|T=1]}_{ATT} + \underbrace{\\{ E[Y_0|T=1] - E[Y_0|T=0] \\}}_{BIAS}\)</span></p>
 <p>여기서 <span class="math notranslate nohighlight">\(E[Y|T=1] - E[Y|T=0]\)</span>는 처치군의 효과와 Bias의 합입니다. <strong>Bias는 실험군과 대조군이 처치를 받지 않은 경우, 처치 전에 실험군과 대조군이 어떻게 다른지를 나타냅니다.</strong> 예시에서 <span class="math notranslate nohighlight">\(E[Y_0|T=0] &lt; E[Y_0|T=1]\)</span>를 보면, <strong>태블릿 제공 여부와 무관</strong> 하게 학생들에게 태블릿을 줄 수 있는 학교가 그렇지 않은 학교보다 낫다고 생각할 것입니다.</p>
 <p>왜 이런 일이 발생하는 것일까요? 교란변수(Confounding variable)에 대해 나중에 더 이야기 할 예정이지만, 지금은 우리가 통제할 수 없는 많은 변수들이 처치와 함께 바뀌기 때문에 발생하는 편향을 생각할 수 있습니다. 태블릿 제공이 학업 성적 향상에 도움이 된다고 이야기하기 위해서는 태블릿이 있는 학교와 없는 학교가 평균적으로 서로 비슷해야 합니다 (비교가능).</p>
-<p>이는 평균적으로 비슷하다면 **<span class="math notranslate nohighlight">\(E[Y_0|T=0] = E[Y_0|T=1]\)</span>으로 나타낼 수 있습니다. 이때, 연관관계는 처치군의 인과관계가 되는 것이지요. 처음 예시에서는 <span class="math notranslate nohighlight">\(E[Y_0|T=0] &lt; E[Y_0|T=1]\)</span>이기 때문에 결과에서 bias가 발생했습니다.</p>
+<p>이는 평균적으로 비슷하다면 <span class="math notranslate nohighlight">\(\mathbf{E[Y_0|T=0] = E[Y_0|T=1]}\)</span>으로 나타낼 수 있습니다. 이때, 연관관계는 처치군의 인과관계가 되는 것이지요. 처음 예시에서는 <span class="math notranslate nohighlight">\(E[Y_0|T=0] &lt; E[Y_0|T=1]\)</span>이기 때문에 결과에서 bias가 발생했습니다.</p>
 <p>처치된 그룹과 처치되지 않은 그룹이 처치에서만 다른 경우 <span class="math notranslate nohighlight">\(E[Y_1|T=0] = E[Y_1|T=1]\)</span>로도 표현할 수 있습니다. 실험군과 대조군이 모두 처치에 유사하게 반응하는지 확인해야합니다. 이제 처치 전 교환가능(exchangeable, 비교가능)하며, <strong>처치 후에도</strong> 실험군과 대조군이 교환 가능해요. 해당 경우는 이렇게 표현될 수 있습니다.</p>
 <p><span class="math notranslate nohighlight">\(E[Y_1 - Y_0|T=1]=E[Y_1 - Y_0|T=0]\)</span></p>
 <p>즉, T에 관계없이 인과효과는 처치군과 대조군에서 동일하므로</p>
@@ -437,7 +437,7 @@ document.write(`
 <h2>실제 인과추론을 하는 방법<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>이론적으로 어떠한 경우에 인과관계라고 말할 수 있는지 알게 되었습니다. 그렇지만 의문이 생깁니다. 현실적으로 인과추론을 어떻게 구현할까요? 두 군을 어떻게 하면 비교가능하게 만들 수 있을까요? 이는 무작위실험으로 가능합니다. 처치군과 대조군에 배정되는 메커니즘이 무작위인 경우이죠.</p>
 <p>랜덤 분배는 잠재적 결과(potential outcomes)를 처치(treatment)로부터 독립적으로 만듦으로써 편향을 제거합니다.</p>
-<p><span class="math notranslate nohighlight">\((Y_0, Y_1) \\perp\\!\\!\\!\\perp T\)</span></p>
+<p><span class="math notranslate nohighlight">\((Y_0, Y_1) \perp T\)</span></p>
 <p>잠재적 결과(potential outcomes)가 처치로부터 무관하다는 것은 기대대로라면 처치군(Treatment group; 처치를 받은 그룹)이나 대조군(Control group; 처치를 받지 않은 그룹)에서도 같은 결과가 나와야한다는 것을 의미합니다. 더 간단히 말해보면, 처치군(타겟군)과 대조군은 비교가 가능하다는 것입니다.</p>
 <p>다음 그림을 통해 살펴보죠. 첫번째 그림에서는 랜덤화를 하는 상황이고, 두번째 그림은 랜덤화를 하고 나서 두 군의 결과입니다. 세번째 그림은 만약 처치를 받지 않은 <span class="math notranslate nohighlight">\(Y_0\)</span>를 관찰할 수 있다면 두 군의 평균값이 같다는 것을 보여줍니다.</p>
 <p><img alt="" src="../_images/Chapter1-04.png" /></p>
