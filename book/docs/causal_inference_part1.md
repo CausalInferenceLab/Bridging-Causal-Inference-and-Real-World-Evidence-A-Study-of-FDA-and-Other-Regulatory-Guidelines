@@ -1,7 +1,8 @@
-# 작성 중 (24.10.2 발표)
-작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
+# Causal Inference Brave and True 1-2
 
 ## 우리가 하고 싶은 것
+작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
+
 우리는 대상에게 어떤 처치를 했을 때 어떤 효과를 나타내는지 알고 싶어 합니다. 예를 들어, 암을 치료하는 신약을 암환자에게 투여했을 때 환자의 생존 기간이 얼마나 늘어날까? 라는 물음을 가지지요. 혹은 1인당 초콜릿 소비량이 국가의 노벨상 수상자 수에 어떤 영향을 미치는지 궁금할 것입니다. 다음은 NEJM(New England Journal of Medicine)이라는 논문에 출판된 그림입니다.
 
 ![](../pics/Chapter1-01.png)

@@ -1,7 +1,8 @@
-# 작성 중 (24.10.2 발표)
-작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
+# Causal Inference Brave and True 1-2
 
 ## 우리가 하고 싶은 것
+작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
+
 우리는 대상에게 어떤 처치를 했을 때 어떤 효과를 나타내는지 알고 싶어 합니다. 예를 들어, 암을 치료하는 신약을 암환자에게 투여했을 때 환자의 생존 기간이 얼마나 늘어날까? 라는 물음을 가지지요. 혹은 1인당 초콜릿 소비량이 국가의 노벨상 수상자 수에 어떤 영향을 미치는지 궁금할 것입니다. 다음은 NEJM(New England Journal of Medicine)이라는 논문에 출판된 그림입니다.
 
 ![](../pics/Chapter1-01.png)
@@ -99,14 +100,20 @@ $(Y_0, Y_1) \\perp\\!\\!\\!\\perp T$
 
 잠재적 결과(potential outcomes)가 처치로부터 무관하다는 것은 기대대로라면 처치군(Treatment group; 처치를 받은 그룹)이나 대조군(Control group; 처치를 받지 않은 그룹)에서도 같은 결과가 나와야한다는 것을 의미합니다. 더 간단히 말해보면, 처치군(타겟군)과 대조군은 비교가 가능하다는 것입니다.
 
-다음 그림을 통해 살펴보죠.
+다음 그림을 통해 살펴보죠. 첫번째 그림에서는 랜덤화를 하는 상황이고, 두번째 그림은 랜덤화를 하고 나서 두 군의 결과입니다. 세번째 그림은 만약 처치를 받지 않은 $Y_0$를 관찰할 수 있다면 두 군의 평균값이 같다는 것을 보여줍니다.
 
 ![](../pics/Chapter1-04.png)
 
 ![](../pics/Chapter1-05.png)
 
+아래 그림에서 각 군은 $Y_0$에 대한 평균값이 서로 같습니다.
+
 ![](../pics/Chapter1-06.png)
 
+## Summary
+연관관계로부터 인과관계를 알기 위해서는 두 군이 비교가능하여야 합니다. 두 가지 조건이 필요한데, 첫째는 처치를 받지 않았을 때 두 군이 평균적으로 비슷해야 한다는 것이고, 둘째는 두 군 모두 처치에 비슷하게 반응해야 된다는 것입니다.
+
+두 군을 비교가능하게 만드려면 무작위 배정을 하여야 합니다. 무작위 배정을 하게 되면 두 군이 비교가능하게 됩니다. 잠재적 결과와 처치가 독립이 됩니다.
 
 참고문헌 : [https://causalinferencelab.github.io/Causal-Inference-with-Python/01-Introduction-To-Causality.html](https://causalinferencelab.github.io/Causal-Inference-with-Python/01-Introduction-To-Causality.html)
 
