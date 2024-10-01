@@ -3,17 +3,9 @@
 ## 우리가 하고 싶은 것
 우리는 대상에게 어떤 처치를 했을 때 어떤 효과를 나타내는지 알고 싶어 합니다. 예를 들어, 암을 치료하는 신약을 암환자에게 투여했을 때 환자의 생존 기간이 얼마나 늘어날까? 라는 물음을 가지지요. 혹은 1인당 초콜릿 소비량이 국가의 노벨상 수상자 수에 어떤 영향을 미치는지 궁금할 것입니다. 다음은 NEJM(New England Journal of Medicine)이라는 논문에 출판된 그림입니다.
 
-![](Chapter1-01.png)
+![](../pics/Chapter1-01.png)
 
 1인당 초콜릿 소비량이 클수록 국가의 노벨상 수상자 수가 커진다고 나타내고 있습니다. 이 논문에서는 아마도 초콜릿 소비가 증가하면 congitive function에 영향을 주어 노벨상 수상자 수가 증가한다고 이야기합니다. 그런데 정말 그렇게 이야기할 수 있을까요? 국가의 GDP나 1인당 소득이 초콜릿 소비량과 노벨상 수상자 수에 모두 영향을 미치지 않았을까요?
 
 우리는 위와 같은 경우를 "연관관계가 있다"고 표현합니다. 하지만 "인과관계"가 있다고 쉽게 이야기하지 못합니다. 그럼 언제 그렇게 이야기할 수 있을까요? 이 물음이 오늘 나눌 이야기의 핵심입니다.
 
-conda activate jb-dev
-jupyter-book clean -–all book
-jupyter-book build book
-git add .
-git commit -m “adding”
-git push
-
-ghp-import -n -p -f book/_build/html -m "Publishing"
