@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/causal_inference_part1';</script>
     <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -360,6 +362,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">우리가 하고 싶은 것</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
 </ul>
             </nav>
         </div>
@@ -379,6 +382,14 @@ document.write(`
 <p><img alt="" src="../_images/Chapter1-01.png" /></p>
 <p>1인당 초콜릿 소비량이 클수록 국가의 노벨상 수상자 수가 커진다고 나타내고 있습니다. 이 논문에서는 아마도 초콜릿 소비가 증가하면 congitive function에 영향을 주어 노벨상 수상자 수가 증가한다고 이야기합니다. 그런데 정말 그렇게 이야기할 수 있을까요? 국가의 GDP나 1인당 소득이 초콜릿 소비량과 노벨상 수상자 수에 모두 영향을 미치지 않았을까요?</p>
 <p>우리는 위와 같은 경우를 “연관관계가 있다”고 표현합니다. 하지만 “인과관계”가 있다고 쉽게 이야기하지 못합니다. 그럼 언제 그렇게 이야기할 수 있을까요? 이 물음이 오늘 나눌 이야기의 핵심입니다.</p>
+</section>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(T_i\)</span>는 실험대상 i에 대한 처치여부를 나타냅니다.</p>
+<p>T_i=\begin{cases}\n
+1 \ \text{: 실험대상 i가 Treatment를 받은 경우}\\n,
+0 \ \text{: 실험대상 i가 Treatment를 받지 않은 경우}\\n
+\end{cases}\n</p>
 </section>
 </section>
 
@@ -437,6 +448,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">우리가 하고 싶은 것</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
 </ul>
   </nav></div>
 
