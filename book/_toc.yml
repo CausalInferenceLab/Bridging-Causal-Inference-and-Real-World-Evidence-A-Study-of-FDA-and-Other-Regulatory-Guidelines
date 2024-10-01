@@ -2,3 +2,4 @@ format: jb-article
 root: intro
 sections:
 - file: docs/markdown-example
+- file: docs/causal_inference_part1
