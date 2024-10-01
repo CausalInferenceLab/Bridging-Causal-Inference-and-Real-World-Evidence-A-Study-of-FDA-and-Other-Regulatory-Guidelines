@@ -116,7 +116,7 @@ $(Y_0, Y_1) \perp T$
 두 군을 비교가능하게 만드려면 무작위 배정을 하여야 합니다. 무작위 배정을 하게 되면 두 군이 비교가능하게 됩니다. 잠재적 결과와 처치가 독립이 됩니다.
 
 참고문헌 : 
-1. [https://causalinferencelab.github.io/Causal-Inference-with-Python/landing-page.html.html](https://causalinferencelab.github.io/Causal-Inference-with-Python/landing-page.html)
+1. [https://causalinferencelab.github.io/Causal-Inference-with-Python/landing-page.html](https://causalinferencelab.github.io/Causal-Inference-with-Python/landing-page.html)
 
 2. [Messerli, F. H. (2012). Chocolate consumption, cognitive function, and Nobel laureates. N Engl J Med, 367(16), 1562-1564.](https://cbb.sjtu.edu.cn/~jingli/courses/2018fall/bi372/files/NEJM.pdf)
 
