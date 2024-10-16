@@ -3,3 +3,4 @@ root: intro
 sections:
 - file: docs/markdown-example
 - file: docs/causal_inference_part1
+- file: docs/causal_inference_part2
