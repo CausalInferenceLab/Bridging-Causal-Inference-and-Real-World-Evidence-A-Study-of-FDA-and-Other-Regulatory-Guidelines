@@ -1,6 +1,7 @@
 format: jb-article
 root: intro
 sections:
-- file: docs/markdown-example
 - file: docs/causal_inference_part1
 - file: docs/causal_inference_part2
+- file: docs/Framework_for_FDAs_RWE_Program
+- file: docs/markdown-example
