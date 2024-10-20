@@ -1,0 +1,1057 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Title &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Framework_for_FDAs_RWE_Program';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="markdown 예시" href="markdown-example.html" />
+    <link rel="prev" title="Causal Inference Chapter 3-4" href="causal_inference_part2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part1.html">Causal Inference Brave and True 1-2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part2.html">Causal Inference Chapter 3-4</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Title</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/Framework_for_FDAs_RWE_Program.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Framework_for_FDAs_RWE_Program.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Title</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Title</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-of-real-world-data-and-real-world-evidence">Definitions of Real-World Data and Real-World Evidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trials-and-observational-studies-covered-by-the-rwe-program">Clinical Trials and Observational Studies Covered by the RWE Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-rwe-program-under-21st-century-cures-act">Scope of RWE Program Under 21st Century Cures Act</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-use-of-rwd-for-evidence-generation">Current Use of RWD for Evidence Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-evidence-regarding-safety-and-effectiveness">Generating Evidence Regarding Safety and Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-fda-s-regulatory-decisions-of-effectiveness">Supporting FDA’s Regulatory Decisions of Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-designs-using-rwd-to-generate-evidence">Trial Designs Using RWD to Generate Evidence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="title">
+<h1>Title<a class="headerlink" href="#title" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Framework for FDA’s Real-World Evidence Program</p></li>
+</ul>
+</section>
+<section id="information">
+<h1>Information<a class="headerlink" href="#information" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Link</p>
+<ul>
+<li><p><a class="reference external" href="https://www.fda.gov/media/120060/download?attachment">https://www.fda.gov/media/120060/download?attachment</a></p></li>
+</ul>
+</li>
+<li><p>Topic</p>
+<ul>
+<li><p>US FDA</p></li>
+<li><p>Regulation</p></li>
+<li><p>RWE</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>2016년 12월의 21st Century Cures Act</p>
+<ul>
+<li><p>환자에게 필요할 의료 제품(medical product) 개발 및 혁신을 가속화하려고 고안된 법</p></li>
+<li><p>FD&amp;C Act</p>
+<ul>
+<li><p>section 505F</p></li>
+<li><p>Federal Food, Drug, and Cosmetic Act</p></li>
+<li><p>이에 따라 FDA가 RWE 평가에 대한 framework를 고안하게 됨</p>
+<ul>
+<li><p>Drug, biological products에 적용됨</p></li>
+<li><p>의료기기 적용은 이 framework에 해당되지 않음</p>
+<ul>
+<li><p>의료기기는 별도 가이던스가 있음</p></li>
+<li><p><a class="reference external" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-real-world-evidence-support-regulatory-decision-making-medical-devices">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-real-world-evidence-support-regulatory-decision-making-medical-devices</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>FDA’s RWE Program</p>
+<ul>
+<li><p>여러 측면(multifaceted)을 다뤄야 함</p></li>
+<li><p>프로젝트 예시 제시(demonstration projects)</p></li>
+<li><p>관련 주체들의 관여 (Stakeholder engagement)</p></li>
+<li><p>RWE 평가(evaluation of RWE)</p>
+<ul>
+<li><p>senior leadership input에 대한 internal process</p></li>
+</ul>
+</li>
+<li><p>아래 분야에 도움(promote)을 줌</p>
+<ul>
+<li><p>지식 공유 (shared learning) and</p></li>
+<li><p>일관성 유지(consistency in applying the framework)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="definitions-of-real-world-data-and-real-world-evidence">
+<h3>Definitions of Real-World Data and Real-World Evidence<a class="headerlink" href="#definitions-of-real-world-data-and-real-world-evidence" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>RWE 정의</p>
+<ul>
+<li><p>FD&amp;C Act의 Section 505F(b)에 명시</p></li>
+<li><p>전통적인 임상시험이 아닌, 그 외의 출처로부터 얻은 약물의 용례, 잠재적인 이득 또는 위험성에 대한 데이터 로 정의함</p>
+<ul>
+<li><p>data regarding the usage, or the potential benefits or risks, of a drug derived from sources other than traditional clinical trials</p></li>
+<li><p><a class="reference external" href="https://www.law.cornell.edu/uscode/text/21/355g">https://www.law.cornell.edu/uscode/text/21/355g</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Real world dat의 출처(source)와 이 data로부터 추출된(derived) 증거(evidence)를 구분하는 것은 유용함</p></li>
+<li><p>규제 관련 판단의 맥락(in the context of regulatory decision-making)에서</p>
+<ul>
+<li><p>RWE의 평가</p>
+<ul>
+<li><p>증거 도출을 하는 방법론(methodologies used to generate the evidence)에 대한 평가 외에도</p></li>
+<li><p>RWD의 신뢰성과 타당성(the reliability and relevance) 평가가 필요</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RWD(Real World Data) 정의</p>
+<ul>
+<li><p>환자의 건강 상태(patient health status)/또는 의료 전달(delivery of health care)과 관련된 데이터</p></li>
+<li><p>일상적으로 수집(routinely collected)되며, 출처가 다양함</p></li>
+<li><p>예시 (Examples)</p>
+<ul>
+<li><p>전자의무기록(EHRs:Electronic Health Records)</p></li>
+<li><p>보험 청구 데이터(medical claims and billing data)</p></li>
+<li><p>제품으로부터 수집된 데이터(data from product)</p></li>
+<li><p>질환 레지스트리(disease registries)</p></li>
+<li><p>환자 생성 데이터(patient-generated data)</p>
+<ul>
+<li><p>in-home use settings 포함</p></li>
+</ul>
+</li>
+<li><p>건강 상태를 알려줄 수 있는 데이터</p>
+<ul>
+<li><p>핸드폰(mobile device)에서 수집됨</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RWE(Real World Evidence) 정의</p>
+<ul>
+<li><p>RWD 분석을 통해 도출된 의료제품(medical products) 사용의 잠재적 이점 또는 위험(potential benefits or risks)에 대한 임상적 증거(Clinical Evidence)</p></li>
+<li><p>RWD source</p>
+<ul>
+<li><p>예시:registries, collection of EHRS, 청구 데이터 데이터베이스</p></li>
+<li><p>RWE의 data collection, analysis infrastructure로 활용함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="clinical-trials-and-observational-studies-covered-by-the-rwe-program">
+<h3>Clinical Trials and Observational Studies Covered by the RWE Program<a class="headerlink" href="#clinical-trials-and-observational-studies-covered-by-the-rwe-program" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>RWE를 활용할 수 있는 임상 연구 디자인(trial design)</p>
+<ul>
+<li><p>traditional clinical trial에서 얻어진 증거는 RWE가 아님</p></li>
+<li><p>hybrid or pragmatic trial designs, obesrvational studies</p>
+<ul>
+<li><p>RWE 도출 가능</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Clinical Trials</strong></p>
+<ul>
+<li><p>한 명 이상의 피험자가 전향적으로 하나 이상의 처치에 할당되어 건강과 연관된 결과를 평가하기 위한 연구</p></li>
+<li><p>A research study in which one or more <strong>human subjects</strong> are <strong>prospectively assigned</strong> to one or more interventions(which may include placebo or other control) to evaluate the effects of those interventions on <strong>health-related</strong> biomedical or behavoral outcomes</p></li>
+<li><p>전통적 임상시험 Traditional Clinical Trial</p>
+<ul>
+<li><p>엄격한 선정제외기준(restrictive eligibility criteria)</p></li>
+<li><p>실제 임상환경(routine clinical practice)과 다른 setting에서 수집됨</p>
+<ul>
+<li><p>Research infrastructure 하에서 수행됨</p></li>
+<li><p>data의 variability는 통제(control)하면서 data의 품질(quality)은 극대화(maximize)하기 위함</p></li>
+</ul>
+</li>
+<li><p>Randomized, double-blinid trials</p>
+<ul>
+<li><p>수행하기 위한 별도의 절차가 존재</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hybrid Design</p>
+<ul>
+<li><p>아래의 출처에서 추출된 RWD를 분석 및 활용</p>
+<ul>
+<li><p>청구 데이터(medical claims)</p></li>
+<li><p>EHRs</p></li>
+<li><p>laboratory and pharmacy databases</p></li>
+</ul>
+</li>
+<li><p>어떤 데이터는 RWD를 활용하고 어떤 데이터는 전통적인 임상시험 setting에서 수집됨</p>
+<ul>
+<li><p>가령, 입원, 사망 관련 데이터는 RWD에서,</p></li>
+<li><p>선정 제외 기준 이나 연구 평가항목(study endpoint) 등은 지정된 인력(dedicated study personnel)이 전통적인 임상시험에서처럼 수집함</p></li>
+</ul>
+</li>
+<li><p>FDA는 이런 연구에서 수집된 data가 RWE 도출에 사용될 가능성(the potential to generate RWE)이 있다고 판단함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Observational Studies</strong></p>
+<ul>
+<li><p>비개입 임상 연구 디자인(Non-interventional clinical study designs )</p>
+<ul>
+<li><p>clinical trial로 간주되지 않음</p></li>
+</ul>
+</li>
+<li><p><strong>Retrospective Observational Study</strong></p>
+<ul>
+<li><p>과거 데이터(historical data)로부터 특정 집단(population)을 식별하고 노출/처치(exposure/treatment) 에 대해 연구하는 것</p></li>
+<li><p>historical data</p>
+<ul>
+<li><p>연구 시작 전에 데이터가 생성됨</p></li>
+</ul>
+</li>
+<li><p>평가 항목(variable)과 평가 변수(outcome)는 연구 개발 시점에 정함</p></li>
+</ul>
+</li>
+<li><p>**Prospective Observational Study</p>
+<ul>
+<li><p>연구 시작 시점에 population of interest를 정하고(identify)</p>
+<ul>
+<li><p>그 시점 이후부터 exposure/treatment and outcome data를 수집함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RWE를 생성할 수 있는 연구 디자인임</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scope-of-rwe-program-under-21st-century-cures-act">
+<h3>Scope of RWE Program Under 21st Century Cures Act<a class="headerlink" href="#scope-of-rwe-program-under-21st-century-cures-act" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cures Act에 따라 FDA의 RWE Program에서</p>
+<ul>
+<li><p>허가받은 약물의 새 적응증(new indications)추가나 시판후 연구(postapproval study)에 사용될 RWD의 잠재적 사용(potential use)에 대해 평가되어야 함</p></li>
+</ul>
+</li>
+<li><p>RWE 생성에 사용되지 않더라도, 임상 연구의 효율성(efficiency of clinical trials) 향상을 위해 RWD 가 사용될 수 있음. 예를 들어</p>
+<ul>
+<li><p>RCT에서 검정될 가설의 생성(Generating hypotheses for testing in randomized controlled trials)</p></li>
+<li><p>약물 개발 도구의 식별(identifying drug development tools)</p></li>
+<li><p>연구군(relevant population)에서의 선정제외 기준에 끼치는 영향을 평가하여 임상시험 가능성을 평가함 (Assessing trial feasibility)</p>
+<ul>
+<li><p>both within a geographical area or at a particular trial site</p></li>
+</ul>
+</li>
+<li><p>베이지안 통계 모형에서 사전확률분포를 제공(informing prior probability distributions in Bayesian statistical models)</p></li>
+<li><p>대상자 추가(enrichment) 또는 층화(stratificaiton)를 위해 예후예측 인자(prognostic indicators)나 피험자 기저 특성(baseline characteristics)의 식별</p></li>
+<li><p>지역별로 흩어진 연구 코호트의 통합(assembling geographically distributed research cohorts)</p>
+<ul>
+<li><p>가령 희귀 질환 치료를 위한 약물 개발(drug development for rare diseases or targeted therapeutics)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="current-use-of-rwd-for-evidence-generation">
+<h2>Current Use of RWD for Evidence Generation<a class="headerlink" href="#current-use-of-rwd-for-evidence-generation" title="Permalink to this heading">#</a></h2>
+<section id="generating-evidence-regarding-safety-and-effectiveness">
+<h3>Generating Evidence Regarding Safety and Effectiveness<a class="headerlink" href="#generating-evidence-regarding-safety-and-effectiveness" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Postmarket 연구에 FDA가 RWE를 활용한 이력은 김(long history)</p>
+<ul>
+<li><p>to monitor and evaluate the safety of drug products</p></li>
+</ul>
+</li>
+<li><p>Electronic health data</p>
+<ul>
+<li><p>FDA’s primary source for executing</p>
+<ul>
+<li><p>pharmacopeidemiologic queries and studies</p></li>
+</ul>
+</li>
+<li><p>Sentinal System의 의료 청구 데이터와 약국 판매 기록(medical claims and pharmacy dispensing data)</p></li>
+</ul>
+</li>
+<li><p>Sentinel Initiative</p>
+<ul>
+<li><p>FDA의 CDER와 CBER이 여기에 따라 safety monitoring을 수행함</p></li>
+<li><p>pharmacoepdemiologic research project 계획임</p></li>
+<li><p>안전성 우려가 식별이 되면(based on the identification of a safety concern)</p>
+<ul>
+<li><p>FDA가 Sentinel System을 통해 연구를 계획할 수 있음</p>
+<ul>
+<li><p>약물이 허가 받기 전이라도 가능</p></li>
+</ul>
+</li>
+<li><p>FDA는 우선, 제기된 안전성 이슈(safety question)에 대한 정보를 얻을 수 있는 질문(query)을 고안함</p>
+<ul>
+<li><p>Sentinel System data parterners가 정보를 수집할 수 있는 형태로…</p></li>
+</ul>
+</li>
+<li><p>약물 허가 후에도 안전성 이슈에 대한 연구를 FDA가 디자인할 수도 있음</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CDER와 CBER는 Other Federal partners와 함께 pharmacoepidemiologic studies를 수행하기도 함</p>
+<ul>
+<li><p>Other partners</p>
+<ul>
+<li><p>Centers for Medicare &amp; Medicaid Services</p></li>
+<li><p>the Veterans Health Administration</p></li>
+</ul>
+</li>
+<li><p>CDER uses</p>
+<ul>
+<li><p>the Clinical Practice Research Datalink</p>
+<ul>
+<li><p>영국(United Kingdom)의 longitudinal patient-level EHR data와 연동</p></li>
+</ul>
+</li>
+<li><p>the Centers for Disease Control and Prevention National Electronic Injury Surveillance System-Cooperative Adverse Drug Event Surveillance Project</p>
+<ul>
+<li><p>약 60개의 미국 전역 병원 응급실과 연계되어 약물 남용, 오용, 그리고 자해에 사용될 가능성(potential for self-harm)을 평가함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CDER has created focused surveillance efforts within the</p>
+<ul>
+<li><p>Sentinel System for vaccine safety, using the</p>
+<ul>
+<li><p>Post-Licensure Market Rapid Immunization Safety Monitoring(PRISM) system</p></li>
+</ul>
+</li>
+<li><p>혈액 제제(blood components and blood derived products)에 대해선</p>
+<ul>
+<li><p>Blood Surveillance Continuous Active Surveillance Network(BloodSCAN)</p></li>
+</ul>
+</li>
+<li><p>2017년에 the Sentinel Biologics Effectiveness adn Safety(BEST) system을 시작함</p>
+<ul>
+<li><p>Sentinel Initiative and other evidence generation program이 확대된 것</p></li>
+<li><p>새로운 data source 추가</p>
+<ul>
+<li><p>EHR and medical claims data</p></li>
+<li><p>new analytic tools</p></li>
+<li><p>new collaborating institutions</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>유효성 관련 결정(effectiveness determinations)에 RWE 사용은 훨씬 제한적임</p>
+<ul>
+<li><p>CBER에서는 CMS data를 활용하여 백신의 예방효과를 비교한 적 있음</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="supporting-fda-s-regulatory-decisions-of-effectiveness">
+<h3>Supporting FDA’s Regulatory Decisions of Effectiveness<a class="headerlink" href="#supporting-fda-s-regulatory-decisions-of-effectiveness" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>FDA가 주로 암 연구(oncology)와 희귀 질환에 대해 RWE를 약물 승인 자료로 수용한 적이 있음</p>
+<ul>
+<li><p>single-arm interventional trial 결과에 근거하여 승인이 내려짐</p>
+<ul>
+<li><p>평행 대조군(parallel assignment of control arm) 사용이 비윤리적이거나 적용가능하지 않음</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The supportive RWE</p>
+<ul>
+<li><p>차트 검토, expanded access 등에서 추출된 historical response rate등으로 구성되었음</p></li>
+</ul>
+</li>
+<li><p>Blincyto(blinatumomab)</p>
+<ul>
+<li><p>단일군 시험 결과로 최초에 신속 허가(accelerated approval)를 받음</p></li>
+<li><p>적응증은 급성 백혈병(Philadelphia chromosome-negative relapsed or refractory B-cell precursor acute lymphoblastic leukema)의 치료</p></li>
+<li><p>단일군 연구에서의 Comple remession(CR)과 이 CR의 유지기간(duration of CR)에 근거하여 허가를 받음</p>
+<ul>
+<li><p>이 때 response rate을 EU와 U.S. 임상연구에서의 2000 명 이상 환자에서 추출된 비교가능한(comparable) 694명의 data와 비교함</p></li>
+</ul>
+</li>
+<li><p>임상적 이점(the clinical benefit)을 확인하기 위한 추가 RCT를 FDA가 요구함</p></li>
+</ul>
+</li>
+<li><p>Trials Generating RWE</p>
+<ul>
+<li><p>Randomized trial using RWD to asess dose response</p>
+<ul>
+<li><p>ADAPTABLE(Aspirin Dosing: A Patient-Centric Trial Assessing Benefits and Long-Term Effectiveness)</p>
+<ul>
+<li><p>NCT02697916</p></li>
+</ul>
+</li>
+<li><p>pragmatic 임상 시험임</p></li>
+<li><p>아스피린 용량 81 mg , 325 mg을 비교함</p>
+<ul>
+<li><p>심근경색(myocardial infarction) 이력 또는 동맥경화성 심혈관 심장병 병력에 따라 20,000 명의 환자들을 무작위배정함</p></li>
+</ul>
+</li>
+<li><p>National Patient-Centered Clinical Research Network(PCORnet)을 통해 잠재적 참여대상자(potential participants)를 식별하는 데 전자 알고리즘(electronic algorithms)을 사용함</p></li>
+<li><p>dose 결정 외에는 일반적인 임상 치료(routine clinical care)를 받게 됨</p></li>
+<li><p>EHR과 청구 데이터(PCORnet을 활용)로 1차 평가변수(primary endpoint)를 얻음(capture)</p>
+<ul>
+<li><p>primary endpoint</p>
+<ul>
+<li><p>death,</p></li>
+<li><p>hospitalization for non-fatal myocardial infarction or non-fatal stroke</p></li>
+</ul>
+</li>
+<li><p>secondary endpoint</p>
+<ul>
+<li><p>coronary revascularization procedures</p></li>
+<li><p>hospitalization for serious bleeding</p></li>
+<li><p>other patient reported outcomes</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Randomized trial using an established registry</p>
+<ul>
+<li><p>VALIDATE-SWEDHEART(The Bivalirudin versus Heparin in ST-Segment and Non-ST-Segment Elevation Myocardial Infarction in Patients on Modern Antiplatelet Therapy in the Swedish Web System for Enhancement and Development of Evidence-Based Casre in Heart Disease Evaluated According to Recommended Therapies Registry Trial)</p>
+<ul>
+<li><p>NCT02311231</p></li>
+</ul>
+</li>
+<li><p>Registry-based, multicenter trial</p></li>
+<li><p>환자들은 percutaneous coronary intervention 동안 bivalirudin 또는 heparin 복용을 하는 것에 무작위배정 됨</p></li>
+<li><p>The Composite Endpoint</p>
+<ul>
+<li><p>심근경색, all-cause mortality, 6개월 시점의 major bleeding</p></li>
+</ul>
+</li>
+<li><p>스웨덴 레지스트리 플랫폼 사용</p>
+<ul>
+<li><p>국가 단위(national population-based)</p></li>
+<li><p>for</p>
+<ul>
+<li><p>continuous enrollment</p></li>
+<li><p>randomization</p></li>
+<li><p>data collection</p></li>
+<li><p>follow-up</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="trial-designs-using-rwd-to-generate-evidence">
+<h3>Trial Designs Using RWD to Generate Evidence<a class="headerlink" href="#trial-designs-using-rwd-to-generate-evidence" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Randomized Controlled Trials Integrated into Health Care Systems</strong></p>
+<ul>
+<li><p>의료 시스템(health care system)에 임상시험이 통합되어 실제 임상(clinical practice)에서의 결과(outcome)를 얻는 시도는 예전에도 있었음</p>
+<ul>
+<li><p>1980년대 말, 이탈리아의 연구자들이 급성 심근경색 연구를 함</p>
+<ul>
+<li><p>11,712 환자들을 표준 치료 또는 표준 치료 + streptokinase 정맥 투여를 받는 것으로 무작위배정함</p></li>
+<li><p>clinical practice와 clinical research로 연구가 나뉘는 것을 막고자 함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>임상시험(clinical trial)이 의료 시스템에 통합되는 것은 가능하며, pragmatic elements를 포함할 수 있음</p></li>
+<li><p>Trial Integration</p>
+<ul>
+<li><p>RWD를 활용하여 연구 결과의 수집(collection of outcomes)과 serious adverse event 수집을 용이하게 해야 함</p></li>
+</ul>
+</li>
+<li><p>위의 Trials Generating RWE</p>
+<ul>
+<li><p>RWD를 사용하여 약물의 potential benefits or risks에 대한 증거를 얻은 시험들의 예시를 제시하고 있음</p></li>
+<li><p>공통점(share certain characteristics)</p>
+<ul>
+<li><p>RWD sources를 통해 잘 포착될(well captured) 수 있음</p>
+<ul>
+<li><p>less diagnostic variability 때문에…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Observational Studies Using RWD to Generate RWE</strong></p>
+<ul>
+<li><p>Observational Studies</p>
+<ul>
+<li><p>무작위 할당(random assignment)이 아닌, 의사의 판단으로 치료가 결정됨</p>
+<ul>
+<li><p>유효성 판정(effectiveness decisions)에 대한 인과성 추론(causal inference)을 어렵게 함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>무작위배정(Randomization)</p>
+<ul>
+<li><p>각 연구군에서 목표한 결과(targeted outcome)에 대한 risk factor의 균형을 맞춰줌</p>
+<ul>
+<li><p>처치 할당의 편향을 막아(prevent bias in allocation of the intervention)주기 때문임</p></li>
+</ul>
+</li>
+<li><p>약물 사용(medication use)과 치료 결과(health care outcomes) 사이의 인과 관계(causal relationship)을 세우는 데 중요한 요소임</p></li>
+</ul>
+</li>
+<li><p>RCT 연구에서 얻은 효과의 증거가 더 강력</p>
+<ul>
+<li><p>관찰 연구에서 얻은 효과가 무작위 연구에서 재현되지 않거나 효과 크기가 다른 경우가 있음</p></li>
+</ul>
+</li>
+<li><p>FDA는 관찰 연구로부터 얻은 결과들로 무작위시험 결과를 재현하기 위한 엄격한 디자인과 통계적 방법론에 대해 알고 있음</p>
+<ul>
+<li><p>Fralick et al. 2017</p>
+<ul>
+<li><p>RCT 결과와 관찰연구 결과를 후향적으로 문헌고찰(retrospective review of the literature) 하는 것은  두 방식의 차이에 대한 요약(single summarazation of the differences)은 할 수 있지만, individual real-world data analyses의 타당성에 대해선 거의 정보를 제공하지 못함</p></li>
+<li><p>의미 있는 기저치(meaningful baseline)를 세우려면, FDA는 많은 RCT 결과와 전향적으로 디자인한 비무작위 분석(prospectively designed, nonrondomized analysis) 결과를 대조하여, 엄격한 역학적 원칙에 따라 평가를 해야 함 (To establish a meaningful baseline, the FDA will need many sets of randomized clinical trials with prospectively designed, nonrandomized analyses to match the populations included in randomized clinical trials across a range of clinical questions, each investigated with a set of designs and methods following rigorous epidemiologic principles)</p></li>
+</ul>
+</li>
+<li><p>RWE 프로그램에 따라, FDA는 관찰 연구가 약품 유효성의 증거에 어느 정도 기여할 수 있을 지 평가할 것임 </p>
+<ul>
+<li><p>잘 고안된 관찰연구에서 RCT 결과를 재현하려고 하는 것이 도움이 될 것임</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="causal_inference_part2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Causal Inference Chapter 3-4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">markdown 예시</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Title</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-of-real-world-data-and-real-world-evidence">Definitions of Real-World Data and Real-World Evidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trials-and-observational-studies-covered-by-the-rwe-program">Clinical Trials and Observational Studies Covered by the RWE Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-rwe-program-under-21st-century-cures-act">Scope of RWE Program Under 21st Century Cures Act</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-use-of-rwd-for-evidence-generation">Current Use of RWD for Evidence Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-evidence-regarding-safety-and-effectiveness">Generating Evidence Regarding Safety and Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-fda-s-regulatory-decisions-of-effectiveness">Supporting FDA’s Regulatory Decisions of Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-designs-using-rwd-to-generate-evidence">Trial Designs Using RWD to Generate Evidence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
