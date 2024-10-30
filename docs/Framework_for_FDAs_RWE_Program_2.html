@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Framework for FDA’s Real-World Evidence Program2 &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Framework_for_FDAs_RWE_Program_2';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="markdown 예시" href="markdown-example.html" />
+    <link rel="prev" title="Framework for FDA’s Real-World Evidence Program" href="Framework_for_FDAs_RWE_Program.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part1.html">Causal Inference Brave and True 1-2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part2.html">Causal Inference Chapter 3-4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Framework_for_FDAs_RWE_Program.html">Framework for FDA’s Real-World Evidence Program</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Framework for FDA’s Real-World Evidence Program2</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/Framework_for_FDAs_RWE_Program_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Framework_for_FDAs_RWE_Program_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Framework for FDA’s Real-World Evidence Program2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Framework for FDA’s Real-World Evidence Program2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-trials-or-studies-with-rwd-rwe-for-effectiveness-decisions">Using Trials or Studies with RWD/RWE for Effectiveness Decisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-fitness-of-rwd-for-use-in-regulatory-decisions">Assessing Fitness of RWD for Use in Regulatory Decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-for-study-designs-using-rwd-to-support-effectiveness">Potential for Study Designs Using RWD to Support Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-considerations-for-study-designs-using-rwd">Regulatory Considerations for Study Designs Using RWD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standards-appropriate-data-standards-for-integration-and-submission-to-fda">Data Standards – Appropriate Data Standards for Integration and Submission to FDA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-example-rgbm">Regulatory Example: rGBM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medicenna-case">MEDICENNA Case</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="framework-for-fda-s-real-world-evidence-program2">
+<h1>Framework for FDA’s Real-World Evidence Program2<a class="headerlink" href="#framework-for-fda-s-real-world-evidence-program2" title="Permalink to this heading">#</a></h1>
+<p>작성자 : <a class="reference external" href="https://www.linkedin.com/in/inyoungjun/">전인영</a></p>
+</section>
+<section id="information">
+<h1>Information<a class="headerlink" href="#information" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Source</p>
+<ul>
+<li><p><a class="reference external" href="https://www.fda.gov/media/120060/download?attachment">https://www.fda.gov/media/120060/download?attachment</a></p></li>
+<li><p>Information from the professional development course at JSM 2024 (Freda Cooner and Laura Fernandes).</p></li>
+</ul>
+</li>
+<li><p>Topic</p>
+<ul>
+<li><p>US FDA</p></li>
+<li><p>Regulation</p></li>
+<li><p>RWE</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<section id="using-trials-or-studies-with-rwd-rwe-for-effectiveness-decisions">
+<h2>Using Trials or Studies with RWD/RWE for Effectiveness Decisions<a class="headerlink" href="#using-trials-or-studies-with-rwd-rwe-for-effectiveness-decisions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>기존에는 Clinical Trials “Efficiency” 를 향상하는데 RWD를 주로 사용했으며, “효과성” 결정에는 제한적으로 사용해왔음.
+Ex) RCT로 테스팅할 연구 가설을 생성, 베이지안 방법 사용시 필요한 사전확률 계산, 지리적으로 퍼져있는 연구 코호트들을 결합 할 때 등</p></li>
+<li><p>이제 약물 제품의 “Effectiveness”에 대한 규제 결정을 지원하기 위해 RWD를 사용하려는 관심이 큼</p>
+<ul>
+<li><p>Ex) RWE를 사용하여 새로운 적응증을 추가하기 (i.e., purpose of treatment), 환자군, 용량, 용법, 투여 경로 변경 하기</p></li>
+</ul>
+</li>
+<li><p>고려해야할 중요한 사항</p>
+<ul>
+<li><p>RWD를 사용하는 것이 적합한 지</p></li>
+<li><p>본 연구 설계가 규제 절차에 필요한 질문에 답할 수 있는 충분한 과학적 증거를 제공할 수 있는 실험 설계인지</p></li>
+<li><p>연구 수행 방식이  FDA 규제 요구 사항을 충족하는지 (ex. 연구와 데이터 수집에 대해 적절한 관리 감독이 되는지)</p></li>
+</ul>
+</li>
+</ul>
+<section id="assessing-fitness-of-rwd-for-use-in-regulatory-decisions">
+<h3>Assessing Fitness of RWD for Use in Regulatory Decisions<a class="headerlink" href="#assessing-fitness-of-rwd-for-use-in-regulatory-decisions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assessing Data Reliability (Data Accrual and Data Assurance) and Relevance</p>
+<ul>
+<li><p>FDA는 어느 한 종류의 RWD를 선호하는 것은 아니며, 각 규제 조건에 맞는 적합성을 기준으로 RWD를 선정하는 것이 필요함Ex) 약물 안정성의 경우, electronic health records를 사용하는 것에 대한 가이드라인은 존재함</p></li>
+<li><p>FDA는 claim data, EHR, Registries, 및 international dataset의 신뢰성 및 적합성 평가에 대한 지침을 발행할 계획임</p></li>
+</ul>
+</li>
+<li><p>Addressing gaps in RWD sources</p>
+<ul>
+<li><p>EHR 및 의료 청구 데이터의 한계:
+- 관심 질문에 필요한 모든 데이터 요소를 포착하지 못할 수 있음
+- 주요 사건등은 기록되지만, 우울증 악화,  관절 통증 증가, 피부 상태 변화, 천식 악화 등과 같은 사건은 일관되게 문서화되지 않을 수 있음</p>
+<ul>
+<li><p>환자 증상은 비정형 데이터로 기록될 수 있어 접근성이 제한될 수 있음</p></li>
+<li><p>만성 질환의 중증도 변화 데이터는 의료 청구 데이터에서 쉽게 이용할 수 없음</p></li>
+</ul>
+</li>
+<li><p>RWE 개발 및 사용 개선 필요:</p>
+<ul>
+<li><p>EHR의 정보 접근성과 연결성 향상 필요</p></li>
+<li><p>환자 경험은 임상 사건으로 기록되지 않으면 포착되지 않을 수 있음</p></li>
+<li><p>EHR 시스템 간의 형식 차이로 데이터 수집이 어려움</p></li>
+<li><p>의료 시스템의 상호 운용성 부족으로 데이터 통합이 어려움</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="potential-for-study-designs-using-rwd-to-support-effectiveness">
+<h3>Potential for Study Designs Using RWD to Support Effectiveness<a class="headerlink" href="#potential-for-study-designs-using-rwd-to-support-effectiveness" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Randomized designs using RWD
+- FDA가 RWD를 활용한 pragmatic*한 연구를 평가할 때 고려사항:
+*pragmatic: does this intervention work under usual conditions?
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Non-Randomized, Single Arm Trials with Eternal RWD Control</p>
+<ul>
+<li><p>외부대조군External Control Arm (ECA): 과거의 전통적인 임상시험 데이터를 사용하거나RWD로 만들어진 대조군으로 comparative effectiveness를 측정하는데 사용됨</p></li>
+<li><p>특히 rare disease거나 pediatric disease 또는 치료 방법이 제한적인  life-threatening cancer의 경우 대조군을 기존의 완료된 RCT에서 사용하는 경우가 있었음</p></li>
+<li><p>Propensity-score matching을 사용해 RWD ECA를 구성할 수 있음</p></li>
+<li><p>ECA의 장점으로는 patient centric (i.e., 더 적은 환자들이 standard-of-care나 placebo-control arm에 할당되기 때문), cost effective, accelerated clinical development 등이 있음</p></li>
+<li><p>Observational Studies</p>
+<ul>
+<li><p>FDA가 RWD를 활용한 retrospective observational 한 연구를 평가할 때 고려해야 하는 중요한 부분은 다음과 같음:</p></li>
+<li><p>도움이 되는 ‘데이터’인지 (적절한 endpoint가 있는지, 문서가 일관되는지, 누락데이터가 없는지)</p></li>
+<li><p>도움이 되는 ‘연구 설계와 분석 방법’인지</p></li>
+<li><p>사전에 고려해 볼 sensitivity analyses나 statistical diagnostics는 무엇인지?</p></li>
+</ul>
+</li>
+<li><p>연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="regulatory-considerations-for-study-designs-using-rwd">
+<h3>Regulatory Considerations for Study Designs Using RWD<a class="headerlink" href="#regulatory-considerations-for-study-designs-using-rwd" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Use of Electronic Source Data
+- Electronic Source Data in Clinical Investigations (2013)
+- Use of EHR in Clinical Investigations (2018)
+- Use of Electronic Records and Electronic Signatures in Clinical Investigations under 21 CFR Q&amp;A (2017)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Regulatory Considerations for Clinical Studies generating RWE</p>
+<ul>
+<li><p>FDA는 RCT에서 생성된 데이터가 RWE 생성에 사용될 경우 어떻게 다룰 것인지도 평가 할 것</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="data-standards-appropriate-data-standards-for-integration-and-submission-to-fda">
+<h3>Data Standards – Appropriate Data Standards for Integration and Submission to FDA<a class="headerlink" href="#data-standards-appropriate-data-standards-for-integration-and-submission-to-fda" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>FDA는 RWD/RWE를 활용하기 위해 필요한 데이터 표준 및 구현 전략을 평가하고 FDA 규제의 필수적인 부분이 되도록 보장하기 위한 노력을 할 것</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="regulatory-example-rgbm">
+<h1>Regulatory Example: rGBM<a class="headerlink" href="#regulatory-example-rgbm" title="Permalink to this heading">#</a></h1>
+<section id="medicenna-case">
+<h2>MEDICENNA Case<a class="headerlink" href="#medicenna-case" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Background: Glioblastoma is a type of cancer that starts as a growth of cells in the brain or spinal cord. Glioblastoma is one of the most aggressive forms of cancer with very limited treatment options. Patients typically survive less than 15 months after first diagnosis and only 6-9 months following relapse. There’s no cure for glioblastoma. Treatments might slow cancer growth and reduce symptoms. The nature of rGBM makes it extremely difficult to recruit and retain patients for study in a clinical setting.</p></li>
+<li><p>Original Phase2 Design: The company originally designed a single-arm study. All patients will receive active treatment (i.e., bizaxofusp). No randomization will be performed, and no blinding procedures are employed.</p></li>
+<li><p>Revised Phase2 Design: The company selected ‘Medidata AI’ company to create SCA to re-analyze their Phase 2 trial to better understand the treatment effect. They compared overall survival with contemporaneous eligibility-matched and propensity score based external control arm (presented 2024 May)</p>
+<ul>
+<li><p>Bizaxofusp Arm(ITT N=47, PPP N=44) vs. ECA (N=81)</p></li>
+<li><p>ECA was not part of the original study design, the trial was under-powered.</p></li>
+<li><p>From the P2b analysis, the knowledge supported sample size calculations for the hybrid phase 3 design.</p></li>
+</ul>
+</li>
+<li><p>Phase3 Design: Then the company design P3 registrational trial that could successfully recruit and retain patients to demonstrate the effects of MDNA55 for registration. The P3 study with bizaxofusp vs hybrid control arm</p></li>
+<li><p>Source: Medicenna phase2b study silde - ASCO Annual Meeting 2024; professional development course at JSM 2024 (Freda Cooner and Laura Fernandes)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Framework_for_FDAs_RWE_Program.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Framework for FDA’s Real-World Evidence Program</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">markdown 예시</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Framework for FDA’s Real-World Evidence Program2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-trials-or-studies-with-rwd-rwe-for-effectiveness-decisions">Using Trials or Studies with RWD/RWE for Effectiveness Decisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-fitness-of-rwd-for-use-in-regulatory-decisions">Assessing Fitness of RWD for Use in Regulatory Decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-for-study-designs-using-rwd-to-support-effectiveness">Potential for Study Designs Using RWD to Support Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-considerations-for-study-designs-using-rwd">Regulatory Considerations for Study Designs Using RWD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standards-appropriate-data-standards-for-integration-and-submission-to-fda">Data Standards – Appropriate Data Standards for Integration and Submission to FDA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-example-rgbm">Regulatory Example: rGBM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medicenna-case">MEDICENNA Case</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
