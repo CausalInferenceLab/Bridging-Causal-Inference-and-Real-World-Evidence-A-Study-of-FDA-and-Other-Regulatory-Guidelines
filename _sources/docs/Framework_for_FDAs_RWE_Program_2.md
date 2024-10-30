@@ -58,7 +58,7 @@ Ex) 약물 안정성의 경우, electronic health records를 사용하는 것에
 
 - Observational Studies
   - FDA가 RWD를 활용한 retrospective observational 한 연구를 평가할 때 고려해야 하는 중요한 부분은 다음과 같음:
-    - 도움이 되는 ‘데이터’인지 (적절한 endpoint가 있는지, 문서가 일관되는지, 누락데이터가 없는지)
+    - 도움이 되는 ‘데이터’인지 (적절한 endpoint가 있는지, 문서가 일관되는지, 누락데이터가 없는지) 
     - 도움이 되는 ‘연구 설계와 분석 방법’인지
     - 사전에 고려해 볼 sensitivity analyses나 statistical diagnostics는 무엇인지?
   - 연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함
