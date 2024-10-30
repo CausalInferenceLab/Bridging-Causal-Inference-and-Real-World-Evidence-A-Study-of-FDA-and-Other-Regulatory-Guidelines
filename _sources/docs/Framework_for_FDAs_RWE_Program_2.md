@@ -40,6 +40,7 @@
     - 의료 시스템의 상호 운용성 부족으로 데이터 통합이 어려움
 
  #### Potential for Study Designs Using RWD to Support Effectiveness
+ 
 	- Randomized designs using RWD
     - FDA가 RWD를 활용한 pragmatic*한 연구를 평가할 때 고려사항:
     *pragmatic: does this intervention work under usual conditions?
@@ -56,6 +57,7 @@
     - 연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함
 
 ####  Regulatory Considerations for Study Designs Using RWD
+
 	- Use of Electronic Source Data
   	- Electronic Source Data in Clinical Investigations (2013)
     - Use of EHR in Clinical Investigations (2018)
