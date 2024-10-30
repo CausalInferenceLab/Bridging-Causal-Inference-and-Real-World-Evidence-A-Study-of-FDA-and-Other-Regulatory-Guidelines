@@ -14,8 +14,9 @@
 ## Summary
 
 ### Using Trials or Studies with RWD/RWE for Effectiveness Decisions
+
 - 기존에는 Clinical Trials “Efficiency” 를 향상하는데 RWD를 주로 사용했으며, “효과성” 결정에는 제한적으로 사용해왔음.
-  Ex) RCT로 테스팅할 연구 가설을 생성, 베이지안 방법 사용시 필요한 사전확률 계산, 지리적으로 퍼져있는 연구 코호트들을 결합 할 때 등
+  - Ex) RCT로 테스팅할 연구 가설을 생성, 베이지안 방법 사용시 필요한 사전확률 계산, 지리적으로 퍼져있는 연구 코호트들을 결합 할 때 등
 - 이제 약물 제품의 “Effectiveness”에 대한 규제 결정을 지원하기 위해 RWD를 사용하려는 관심이 큼
   - Ex) RWE를 사용하여 새로운 적응증을 추가하기 (i.e., purpose of treatment), 환자군, 용량, 용법, 투여 경로 변경 하기
 - 고려해야할 중요한 사항
@@ -24,8 +25,10 @@
 	- 연구 수행 방식이  FDA 규제 요구 사항을 충족하는지 (ex. 연구와 데이터 수집에 대해 적절한 관리 감독이 되는지)
 	
 #### Assessing Fitness of RWD for Use in Regulatory Decisions
+
 - Assessing Data Reliability (Data Accrual and Data Assurance) and Relevance
-	- FDA는 어느 한 종류의 RWD를 선호하는 것은 아니며, 각 규제 조건에 맞는 적합성을 기준으로 RWD를 선정하는 것이 필요함Ex) 약물 안정성의 경우, electronic health records를 사용하는 것에 대한 가이드라인은 존재함
+	- FDA는 어느 한 종류의 RWD를 선호하는 것은 아니며, 각 규제 조건에 맞는 적합성을 기준으로 RWD를 선정하는 것이 필요함  
+  Ex) 약물 안정성의 경우, electronic health records를 사용하는 것에 대한 가이드라인은 존재함
 	- FDA는 claim data, EHR, Registries, 및 international dataset의 신뢰성 및 적합성 평가에 대한 지침을 발행할 계획임
 - Addressing gaps in RWD sources
   - EHR 및 의료 청구 데이터의 한계:
@@ -40,20 +43,23 @@
     - 의료 시스템의 상호 운용성 부족으로 데이터 통합이 어려움
 
  #### Potential for Study Designs Using RWD to Support Effectiveness
-	- Randomized designs using RWD
-    - FDA가 RWD를 활용한 pragmatic*한 연구를 평가할 때 고려사항:
-    *pragmatic: does this intervention work under usual conditions?
-  - Non-Randomized, Single Arm Trials with Eternal RWD Control
-    - 외부대조군External Control Arm (ECA): 과거의 전통적인 임상시험 데이터를 사용하거나RWD로 만들어진 대조군으로 comparative effectiveness를 측정하는데 사용됨
-    - 특히 rare disease거나 pediatric disease 또는 치료 방법이 제한적인  life-threatening cancer의 경우 대조군을 기존의 완료된 RCT에서 사용하는 경우가 있었음
-    - Propensity-score matching을 사용해 RWD ECA를 구성할 수 있음
-    - ECA의 장점으로는 patient centric (i.e., 더 적은 환자들이 standard-of-care나 placebo-control arm에 할당되기 때문), cost effective, accelerated clinical development 등이 있음
-	- Observational Studies
-		- FDA가 RWD를 활용한 retrospective observational 한 연구를 평가할 때 고려해야 하는 중요한 부분은 다음과 같음:
-  		- 도움이 되는 ‘데이터’인지 (적절한 endpoint가 있는지, 문서가 일관되는지, 누락데이터가 없는지)
-  		- 도움이 되는 ‘연구 설계와 분석 방법’인지
-  		- 사전에 고려해 볼 sensitivity analyses나 statistical diagnostics는 무엇인지?
-    - 연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함
+
+- Randomized designs using RWD
+  - FDA가 RWD를 활용한 pragmatic*한 연구를 평가할 때 고려사항:
+
+  *pragmatic: does this intervention work under usual conditions?
+
+- Non-Randomized, Single Arm Trials with Eternal RWD Control
+  - 외부대조군External Control Arm (ECA): 과거의 전통적인 임상시험 데이터를 사용하거나 RWD로 만들어진 대조군으로 comparative effectiveness를 측정하는데 사용됨
+  - 특히 rare disease거나 pediatric disease 또는 치료 방법이 제한적인  life-threatening cancer의 경우 대조군을 기존의 완료된 RCT에서 사용하는 경우가 있었음
+  - Propensity-score matching을 사용해 RWD ECA를 구성할 수 있음
+  - ECA의 장점으로는 patient centric (i.e., 더 적은 환자들이 standard-of-care나 placebo-control arm에 할당되기 때문), cost effective, accelerated clinical development 등이 있음
+- Observational Studies
+  - FDA가 RWD를 활용한 retrospective observational 한 연구를 평가할 때 고려해야 하는 중요한 부분은 다음과 같음:
+    - 도움이 되는 ‘데이터’인지 (적절한 endpoint가 있는지, 문서가 일관되는지, 누락데이터가 없는지)
+    - 도움이 되는 ‘연구 설계와 분석 방법’인지
+    - 사전에 고려해 볼 sensitivity analyses나 statistical diagnostics는 무엇인지?
+  - 연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함
 
 ####  Regulatory Considerations for Study Designs Using RWD
 	- Use of Electronic Source Data
