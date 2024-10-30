@@ -62,12 +62,13 @@
   - 연구 설계 및 분석의 투명성 확보가 결과에 대한 신뢰를 보장하는데 중요함
 
 ####  Regulatory Considerations for Study Designs Using RWD
-	- Use of Electronic Source Data
-  	- Electronic Source Data in Clinical Investigations (2013)
-    - Use of EHR in Clinical Investigations (2018)
-    - Use of Electronic Records and Electronic Signatures in Clinical Investigations under 21 CFR Q&A (2017)
-  - Regulatory Considerations for Clinical Studies generating RWE
-    - FDA는 RCT에서 생성된 데이터가 RWE 생성에 사용될 경우 어떻게 다룰 것인지도 평가 할 것
+
+- Use of Electronic Source Data
+  - Electronic Source Data in Clinical Investigations (2013)
+  - Use of EHR in Clinical Investigations (2018)
+  - Use of Electronic Records and Electronic Signatures in Clinical Investigations under 21 CFR Q&A (2017)
+- Regulatory Considerations for Clinical Studies generating RWE
+  - FDA는 RCT에서 생성된 데이터가 RWE 생성에 사용될 경우 어떻게 다룰 것인지도 평가 할 것
 
 #### Data Standards – Appropriate Data Standards for Integration and Submission to FDA
 - FDA는 RWD/RWE를 활용하기 위해 필요한 데이터 표준 및 구현 전략을 평가하고 FDA 규제의 필수적인 부분이 되도록 보장하기 위한 노력을 할 것
