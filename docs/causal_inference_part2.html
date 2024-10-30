@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Causal Inference Chapter 3-4 &#8212; Bridging causal inference and real-world evidence</title>
   
@@ -14,63 +15,63 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/causal_inference_part2';</script>
-    <link rel="icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Framework for FDA’s Real-World Evidence Program" href="Framework_for_FDAs_RWE_Program.html" />
     <link rel="prev" title="Causal Inference Brave and True 1-2" href="causal_inference_part1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,16 +79,32 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +112,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,25 +120,16 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
+</form></div>
+  </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      
-      
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -135,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -150,18 +157,11 @@
     
     
     <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
-    <img src="../_static/PseudoLab_logo.png" class="logo__image only-dark pst-js-only" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="causal_inference_part1.html">Causal Inference Brave and True 1-2</a></li>
@@ -190,7 +190,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -199,14 +199,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -329,19 +329,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -385,15 +393,15 @@
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="causal-inference-chapter-3-4">
-<h1>Causal Inference Chapter 3-4<a class="headerlink" href="#causal-inference-chapter-3-4" title="Link to this heading">#</a></h1>
+<h1>Causal Inference Chapter 3-4<a class="headerlink" href="#causal-inference-chapter-3-4" title="Permalink to this heading">#</a></h1>
 <p>작성자 : <a class="reference external" href="https://www.linkedin.com/in/jaeyun-choi-0b64292a0/">최재윤</a></p>
 <section id="chapter-3-stats-review">
-<h2>Chapter 3 Stats Review<a class="headerlink" href="#chapter-3-stats-review" title="Link to this heading">#</a></h2>
+<h2>Chapter 3 Stats Review<a class="headerlink" href="#chapter-3-stats-review" title="Permalink to this heading">#</a></h2>
 <section id="estimate">
-<h3>추정(Estimate)<a class="headerlink" href="#estimate" title="Link to this heading">#</a></h3>
+<h3>추정(Estimate)<a class="headerlink" href="#estimate" title="Permalink to this heading">#</a></h3>
 <p>가끔은 평균이나 비율과 같은 모집단의 모수(parameter)를 추정하는 것이 연구의 관심이 되는 경우가 있습니다. 모수를 추정하기 위해 무작위 추출(random sampling)을 사용해 표본 데이터를 만들고 이를 이용하여 모수의 값을 추측하는 절차를 진행되어야 합니다.
 이 때 단일값의 형태로 모수를 추정하는 것을 점 추정(point estimate), 범위 형태로 표현되는 것을 구간 추정(interval estimate)이라고 합니다.</p>
 <p>추정값의 표준오차(Standard Error)</p>
@@ -402,7 +410,7 @@
 <p><span class="math notranslate nohighlight">\(SE = \frac{\sigma}{\sqrt n}\)</span></p>
 </section>
 <section id="confidence-interval">
-<h3>신뢰구간(Confidence interval)<a class="headerlink" href="#confidence-interval" title="Link to this heading">#</a></h3>
+<h3>신뢰구간(Confidence interval)<a class="headerlink" href="#confidence-interval" title="Permalink to this heading">#</a></h3>
 <p>위에서 점추정치에 대한 불확실성의 정밀도를 평가하기 위해 표준오차를 계산한다고 언급했습니다. 그러나 표준오차는 대부분 구간추정치를 계산하는데 사용됩니다.
 구간추정의 대표적인 방법이 바로 신뢰구간입니다. 신뢰구간은 점추정치를 중심으로 양쪽으로 표준오차의 n배수 만큼의 범위를 나타낸 구간입니다.
 신뢰구간을 계산하기 위해서는 중심극한정리(Central limit theorem)를 이용합니다. 중심극한정리는 표본의 크기가 충분히 클 때, 모집단의 분포와 상관없이 모평균을 추정하기 위해 사용되는 표본평균들의 분포는 정규분포를 따른다는 이론입니다.
@@ -414,7 +422,7 @@
 정확한 정의는 ‘동일한 크기의 표본을 반복해서 추출했을 때, 신뢰구간이 모평균을 포함할 확률이 95%이다.’라고 할 수 있습니다. 그러나 사람들이 자주하는 해석이 이해하기 쉽고, 불확실성의 정도를 표현했다는 점에서 큰 문제가 되지는 않습니다.</p>
 </section>
 <section id="hypothesis-test">
-<h3>가설검정(Hypothesis test)<a class="headerlink" href="#hypothesis-test" title="Link to this heading">#</a></h3>
+<h3>가설검정(Hypothesis test)<a class="headerlink" href="#hypothesis-test" title="Permalink to this heading">#</a></h3>
 <p>가설검정은 추정과 더불어 불확실성을 표현하는 대표적인 방법입니다. 가설검정의 일반적인 절차는 다음과 같습니다.</p>
 <ol class="arabic simple">
 <li><p>연구에 대한 <strong>귀무가설</strong>과 <strong>대립가설</strong>을 설정합니다.</p></li>
@@ -435,15 +443,15 @@ p-value가 매우 낮으면, 결과가 우연이 아니라는 것을 의미하�
 </section>
 </section>
 <section id="chapter-4-graphical-causal-models">
-<h2>Chapter 4. Graphical Causal Models<a class="headerlink" href="#chapter-4-graphical-causal-models" title="Link to this heading">#</a></h2>
+<h2>Chapter 4. Graphical Causal Models<a class="headerlink" href="#chapter-4-graphical-causal-models" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>인과관계의 시각화<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>인과관계의 시각화<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>인과관계는 그래프로 표현할 수 있습니다. 이를 인과 그래프라고 하며 DAG (directed acyclic graph)라고도 합니다. 인과 그래프는 노드와 화살표로 구성되어 있습니다. 아래의 예시를 통해 자세히 살펴보시죠.</p>
 <p><img alt="" src="../_images/week2_02.png" /></p>
 <p>그래프의 각 노드는 확률변수입니다. 화살표를 사용하여 한 변수가 다른 변수의 원인이 되는지 표시하게 됩니다. 그리고 여기서 U는 관측되지 않은 변수를 의미합니다. 따라서 위 예제에서는 전환의 원인은 교차 판매 이메일 발송, 나이, 성별, U임을 나타냅니다.</p>
 </section>
 <section id="id2">
-<h3>인과 그래프 구조 유형<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3>인과 그래프 구조 유형<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>사슬 구조</p></li>
 </ol>
@@ -461,14 +469,14 @@ p-value가 매우 낮으면, 결과가 우연이 아니라는 것을 의미하�
 <p><img alt="" src="../_images/week2_03.png" /></p>
 </section>
 <section id="id3">
-<h3>식별 재해석<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>식별 재해석<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>인과 그래프를 배웠다면 편향을 없애기 위해서 무엇을 해야 하는지 이해할 수 있게 됩니다. 식별은 그래프 모델에서 독립성과 밀접한 관련이 있습니다. 인과 그래프에서 처치, 결과 간의 인과관계를 분리하는 과정을 식별이라고 할 수 있습니다.
 하나의 예시를 들어보겠습니다. 한 기업에서 컨설팅을 받는 것이 향후 6개월 수익에 도움이 되는지 확인하고 싶어 합니다. 이 때 좋은 컨설팅을 받기 위해서는 이전 6개월 수익이 좋아야 하고, 이는 역시 이후 6개월 수익에도 영향을 주게 됩니다. 따라서 다음과 같은 인과 그래프를 그릴 수 있습니다.</p>
 <p><img alt="" src="../_images/week2_04.png" /></p>
 <p>그래프에서 확인할 수 있듯이 직접적인 인과 경로와 공통 원인으로 교란받는 비인과 경로가 존재합니다. 여기서 이전 6개월 수익이라는 비인과 경로를 뒷문 경로(backdoor path)라고 합니다. 따라서 컨설팅과 이후 6개월 수익의 인과관계를 파악하기 위해서는 이전 6개월 수익을 조건부로 설정하여 하나의 인과 경로만을 남겨야 합니다.</p>
 </section>
 <section id="id4">
-<h3>교란편향<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3>교란편향<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>교란편향(confounding bias)는 일반적으로 처치와 결과가 공통 원인을 공유하기 때문에 생기는 편향으로 주로 뒷문 경로가 있을 때 발생합니다. 따라서 앞에서 설명한 것처럼 공통 원인을 조건부로 보정한다면 교란편향을 보정할 수 있습니다.
 하지만 모든 공통 원인을 보정하기는 현실적으로 어렵습니다. 따라서 다음과 같은 방법으로 교란편향을 해결하고자 합니다.</p>
 <ol class="arabic simple">
@@ -479,7 +487,7 @@ p-value가 매우 낮으면, 결과가 우연이 아니라는 것을 의미하�
 </ol>
 </section>
 <section id="id5">
-<h3>선택편향<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3>선택편향<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>교란편향이 공통의 원인을 통제하지 않을 때 발생하는 것이라면, 선택편향은 보통 우리가 통제해야하는 변수보다 더 많은 변수를 통제할 때 발생합니다. 한 가지 간단한 예시를 들어보겠습니다.</p>
 <p>어떤 연구자가 “하늘을 쳐다보는 것이 주변의 다른 보행자들도 하늘을 쳐다보게 하는데 영향을 주는가?”라는 질문에 답하기 위해 무작위 실험을 진행했다고 해봅시다. 이 때 무작위 실험으로 인해 교란 편향은 없다고 가정하면 하늘을 쳐다보는 행동과 주변 사람들이 같이 하늘을 쳐다보는 것의 연관성이 인과적 효과를 반영할까요?</p>
 <p>여기에는 또다른 잠재적 문제가 있습니다. 해당 분석에는 자신의 데이터를 사용하는 것에 대해 동의한 사람들의 데이터만 포함되어 있습니다. 보통 부끄러움을 많이 타는 사람들은 하늘을 잘 쳐다보지 않는 경향이 있을 수 있고 연구에 참여하지 않았을 가능성이 큽니다.</p>
@@ -522,7 +530,7 @@ p-value가 매우 낮으면, 결과가 우연이 아니라는 것을 의미하�
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -550,9 +558,7 @@ p-value가 매우 낮으면, 결과가 우연이 아니라는 것을 의미하�
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -598,7 +604,7 @@ By PseudoLab
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -622,8 +628,8 @@ By PseudoLab
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
