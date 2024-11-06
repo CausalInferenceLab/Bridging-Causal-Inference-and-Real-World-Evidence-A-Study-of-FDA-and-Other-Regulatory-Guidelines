@@ -75,7 +75,7 @@
 - 상세한 평가가 완료된 경우에 데이터 원천이 선택될 수 있다.
 	- 추가적인 데이터 수집(primary data collection)을 위해서 feasibility assessment를 할 수도 있다.
 - Comparator group을 선택하는 것은 설계 단계에서 매우 중요하다. 의료 정책이나 보험 정책은 disease severity에 의존하여 행해질 수 있기 때문에 이러한 내용을 고려하여야 한다.
-- 하지만 rare disease의 경우에는 historical or former stadnadrd of care comparator가 사용된다.
+- 하지만 rare disease의 경우에는 historical or former standard of care comparator가 사용된다.
 
 ### 5. Protocol Development
 - 약물역학적 안전성 연구의 설계와 수행의 성공을 위해 경험이 많은 다학제적 연구 팀이 필요하다. 
