@@ -35,14 +35,6 @@
 	- 연구 한계와 그 한계가 결과 증거의 궁극적인 타당성과 신뢰성 및 결과 해석에 미치는 영향에 대한 정성적/정량적 평가를 실시한다.
 	- 프로토콜 개발 단계에서의 실현 가능성 평가와 스터디 시작 후에 프로토콜에 미리 적힌 민감도 분석을 실시하여 증거의 적절성을 평가한다.
 - 웹사이트, 블로그, 소셜미디어, 대화방에서 추출한 사용자가 만든 건강 데이터는 적절하지 않을 수 있으나 가설을 생성하거나 연구의 결과의 맥락을 설명하는 데 사용할 수 있음.
-	- 여러 측면(multifaceted)을 다뤄야 함
-	- 프로젝트 예시 제시(demonstration projects)
-	- 관련 주체들의 관여 (Stakeholder engagement)
-	- RWE 평가(evaluation of RWE)
-		- senior leadership input에 대한 internal process
-	- 아래 분야에 도움(promote)을 줌
-		- 지식 공유 (shared learning) and 
-		- 일관성 유지(consistency in applying the framework)
 
 ![](../pics/M14_figure1.png)
 
