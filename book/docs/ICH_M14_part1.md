@@ -1,6 +1,7 @@
 ## General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines
 
 작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
+
 원자료 : [Link](https://database.ich.org/sites/default/files/ICH_M14_Step3_DraftGuideline_2024_0521.pdf)
 
 ### 1. Introduction
