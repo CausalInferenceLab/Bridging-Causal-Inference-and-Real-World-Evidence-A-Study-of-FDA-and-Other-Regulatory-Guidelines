@@ -1,0 +1,906 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ICH_M14_part2';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="markdown 예시" href="markdown-example.html" />
+    <link rel="prev" title="General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines" href="ICH_M14_part1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part1.html">Causal Inference Brave and True 1-2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part2.html">Causal Inference Chapter 3-4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Framework_for_FDAs_RWE_Program.html">Framework for FDA’s Real-World Evidence Program</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Framework_for_FDAs_RWE_Program_2.html">Framework for FDA’s Real-World Evidence Program2</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ICH_M14_part1.html">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/ICH_M14_part2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/ICH_M14_part2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol-development-cont-d">5. PROTOCOL DEVELOPMENT (Cont’d)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exposures-outcomes-covariates">5.4 Exposures, Outcomes, Covariates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-confounding">5.5 Bias and Confounding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation">5.6 Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">6. DATA MANAGEMENT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-assurance-and-quality-control">품질 보증 및 관리 (Quality Assurance and Quality Control)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-holder">6.1 Data Holder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#researcher">6.2 Researcher</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">7. ANALYSIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">7.1 Statistical Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-and-submission">8. REPORTING AND SUBMISSION</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-of-adverse-events-adverse-drug-reaction-and-product-quality-complaints">8.1 Reporting of Adverse Events, Adverse Drug Reaction, and Product Quality Complaints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-and-content-of-study-documents-for-submission-to-regulatory-authorities">8.2 Formatting and Content of Study Documents for Submission to Regulatory Authorities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissemination-and-communication-of-study-materials-and-findings">9. DISSEMINATION AND COMMUNICATION OF STUDY MATERIALS AND FINDINGS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-documentation-and-record-retention">10. STUDY DOCUMENTATION AND RECORD RETENTION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations-in-specific-population">11. CONSIDERATIONS IN SPECIFIC POPULATION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregnancy-studies">11.1 Pregnancy Studies</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="general-principles-on-plan-design-and-analysis-of-pharmacoepidemiological-studies-that-utilize-real-world-data-for-safety-assessment-of-medicines-part-ii">
+<h1>General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II<a class="headerlink" href="#general-principles-on-plan-design-and-analysis-of-pharmacoepidemiological-studies-that-utilize-real-world-data-for-safety-assessment-of-medicines-part-ii" title="Permalink to this heading">#</a></h1>
+<p>작성자 : <a class="reference external" href="https://www.linkedin.com/in/chungsoo-kim-42419b175/">김청수</a></p>
+<p>원자료 : <a class="reference external" href="https://database.ich.org/sites/default/files/ICH_M14_Step3_DraftGuideline_2024_0521.pdf">Link</a></p>
+<section id="protocol-development-cont-d">
+<h2>5. PROTOCOL DEVELOPMENT (Cont’d)<a class="headerlink" href="#protocol-development-cont-d" title="Permalink to this heading">#</a></h2>
+<section id="exposures-outcomes-covariates">
+<h3>5.4 Exposures, Outcomes, Covariates<a class="headerlink" href="#exposures-outcomes-covariates" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>선택한 자료원에 노출변수 (Exposure), 결과변수 (Outcome) 및 관심 공변량 (Covariate) 등이 적절히 포착될 수 있는 것으로 평가되면, 변수의 조작적 정의 과정을 수행해야 한다.</p></li>
+<li><p>이 과정은 주로 자료원을 선정할 때터 <strong>개념적 정의(Conceptual definition)</strong> 를 생성하는 것으로 부터 시작된다. 개념적 정의는 해당 변수에 대하여 현재의 의학적/과학적 사고를 반영하여야 한다. 예를들어, 아래와 같은 것들을 포함할 수 있다.</p>
+<ul>
+<li><p>질환을 정의하기 위한 임상적 진단기준</p></li>
+<li><p>관심 노출을 정의하기 위한 약물 복용의 측정</p></li>
+</ul>
+</li>
+<li><p>개념적 정의는 표현형(phenotype)이라고 불리우기도 하며, 노출/결과/공변량 변수를 특성화 하기 위한 데이터 요소들에 대하여 구체적인 서술을 포함하여야 한다.</p></li>
+<li><p>핵심 데이터 요소들을 활용하여서 개념적 정의는 <strong>조작적 정의(Operational definition)</strong> 로 개발될 수 있다.</p></li>
+<li><p>많은 전자의무기록 및 청구자료를 활용한 연구에서 조작적 정의는 구조화된 코드 기반의 전자적 알고리즘 형태이다. 다만 일부 연구에서 비정형 데이터를 활용하여 조작적 정의를 수행할 수 있다. 더불어 조작적 정의는 추가적인 데이터 수집 (환자 설문 등)을 통해서 보다 구체화될 수 있다.</p></li>
+<li><p>연구자들은 노출/결과/공변량 변수를 정의할 때 다음과 같은 부분에 대한 고려가 필요하다.</p>
+<ul>
+<li><p>개념적 정의가 주어진 자료원에서 조작적 정의로 적절히 치환될 수 있는가?</p></li>
+<li><p>조작적 정의가 개념적 정의의 모든 구성 요소를 포착할 수 있는가?</p></li>
+<li><p>연구 질문에 기반하여 조작적 정의에 따른 환자의 특성은 적절한가? (검증적 측면)</p></li>
+</ul>
+</li>
+<li><p>연구 프로토콜에는 조작적 정의의 구체적인 코드, 코딩 체계와 정의 근거를 포함하여야 하며, 예상되는 한계점 (측정 편향, proxy, 오분류로 인한 영향), 한계점으로 인한 영향, 극복 방안 등에 대해서도 다루어야 한다.</p></li>
+<li><p>특히 비정형 자료를 활용한 경우, 구체적인 내용, 사용에 대한 근거, 변수 포착을 위한 검색 방법등에 대해서도 포함되어야 한다.</p></li>
+<li><p>조작적 정의는 자료원이나 연구 집단의 고유 특성으로 인하여 다른 성능(민감도, 특이도 등)을 보이기 때문에, 외부에서 정의된 정의를 차용할 때는 그 이유가 정당화 되어야한다.</p></li>
+<li><p><strong>다음과 같은 요소들은 프로토콜 개발 시 고려되어야 한다.</strong></p>
+<ul>
+<li><p>자료원의 특성 및 구조</p></li>
+<li><p>노출/결과/공변량 변수 개발을 위한 정의와 그 방법</p></li>
+<li><p>조작적 정의에 대한 개발 및 성능에 대한 근거</p>
+<ul>
+<li><p>시점</p></li>
+<li><p>데이터 특성: 정형/비정형, 연속형/범주형</p></li>
+<li><p>코드 체계 및 매핑</p></li>
+<li><p>평가 기준 및 성능</p></li>
+</ul>
+</li>
+<li><p>조작적 정의 차용 시의 적절성에 대한 근거</p></li>
+<li><p>오분류가 연구의 타당성 및 해석에 미치는 잠재적인 영향</p></li>
+</ul>
+</li>
+<li><p><strong>노출 변수</strong></p>
+<ul>
+<li><p>개념적 정의</p>
+<ul>
+<li><p>약물 노출의 정의는 다음과 같이 다양한 수준을 기준으로 이루어질 수 있다.</p>
+<ul>
+<li><p>약물 사용력(최초 사용 vs 과거 투약이력), 노출 기간, 현재 노출 유무, 치료 변경, 용량</p></li>
+</ul>
+</li>
+<li><p>약물 노출을 정의할 때는 의약품의 용량, 상품명, 제형, 투여 경로, 투여 횟수 및 투약 기간 등에 대한 정보를 포함하여야 한다. (필요시, 제품 확인을 위하여 제조사에 대한 정보가 포함될 수도 있다. )</p></li>
+<li><p>의약품의 약물학적/생물학적 특징이나 제품 군에 포함되는 각 성분에 대한 정보가 요구될 수 있다.</p></li>
+</ul>
+</li>
+<li><p>조작적 정의</p>
+<ul>
+<li><p>의약품의 종류, 경로 정의 시 고려할 사항</p>
+<ul>
+<li><p>의약품의 처방은 투약을 의미하지 않는다</p></li>
+<li><p>의약품의 투약은 의약품의 복용을 의미하지 않는다</p></li>
+<li><p>환자의 복약순응도</p></li>
+<li><p>샘플 의약품, 저가 의약품, 비처방의약품(OTC), 예방접종 등은 자료원에서 포착되지 않을 수 있다 (자료원 연결 필요)</p></li>
+<li><p>코드 체계 (NDC, RxNorm, HCPCS 등)</p></li>
+</ul>
+</li>
+<li><p>의약품의 용량, 투여시간 및 노출 기간 정의 시 고려할 사항</p>
+<ul>
+<li><p>노출 시작 및 기간이 언제인지 (처방 시점? 투약 시점? 복용 시점?)</p></li>
+<li><p>부정확한 리필</p></li>
+<li><p>투약 간 허용 가능한 기간 (allowable gap)</p></li>
+<li><p>노출의 종료 시점에 대한 고려 또한 명확히 정의되어야 함 (예 - 6개월 이내 신규 처방이 없을 경우)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>결과 변수</strong></p>
+<ul>
+<li><p>개념적 정의</p>
+<ul>
+<li><p>관심 결과변수의 정의는 질환에 대한 임상적, 생물학적, 생리학적, 그리고 기능적 측면이 고려되어야 하며, 의학적 및 과학적 이해를 바탕으로 작성되어야 한다.</p></li>
+<li><p>결과변수가 <strong>최초 발생(incident) 사건인지, 지연 사건(latency)인지, 혹은 악화나 재발인지</strong> 에 대해 정의되어 있어야 하며, 이를 판단하기 위한 구체적인 데이터 요소에 대하여 서술되어 있어야 한다.</p></li>
+<li><p>임상적 결과는 진단 기준, 측정 방법, 측정 도구, 계산 방법, 측정 시점, 변수 타입 및 변환식, 그리고 종말점에 대한 평가 메커니즘 (종말점 판정을 위한 위원회 운영 방식 등) 등에 대한 구체적인 정의가 있어야 한다.</p></li>
+</ul>
+</li>
+<li><p>조작적 정의</p>
+<ul>
+<li><p>조작적 정의는 진단 및 행위 코드 (예, ICD-9-CM, ICD-10, Read, MedRA), 실험실 검사 코드 (예, LOINC), 검사 결과, 비정형 데이터 (예, 임상의 기록, 방사선 보고서, 병리 보고서), 설문 등의 평가도구 등을 활용하여 개념적 정의를 구현하는 것이다.</p></li>
+<li><p>특히 시간이 흐름에 따라 변화하는 코드 체계 및 EHR 시스템을 고려하는 것이 필수적이고, 비정형 데이터의 경우 보다 자세한 방법 및 근거와 검증 방법을 제공해야 한다.</p></li>
+<li><p>진단 코드의 한 번의 등장으로 결과 변수를 정의하기에는 충분한 특이도(specificity)를 나타내기 어려울 수 있으므로, 약제, 검사, 수술 및 처치 등과의 결합을 통하여 정의할 수 있는지 고려해야 한다 (예, 혈전색전증 진단코드와 항응고제, 아나필락시스 코드와 에피네프린 등)</p></li>
+<li><p>추가적인 고려사항</p>
+<ul>
+<li><p>진단 코드를 입력한 의사의 전문 분야(specialty)는 진단 정의에 대하여 또다른 확신을 제공할 수 있다.</p></li>
+<li><p>사망 사건의 경우 환자가 의료기관을 이용 중이 아니라면 전자의무기록에 포함되지 않을 수 있기 때문에 외부 자료원과의 연결이 필요할 수 있다.</p></li>
+<li><p>과거 개발된 조작적 정의를 사용하는 것에 대하여 연구자는 질병,진단 방법 또는 코딩의 관행 변화와 같은 추세를 고려해야하며, 최신 데이터를 사용하여 재평가가 필요할 수 있다. 과거의 조작적 정의를 사용하는 것은 유사한 환자 집단에 대하여 동일한 자료원을 사용하여 개발된 적이 있을 때 이상적으로 활용될 수 있다. (민감도 특이도 및 양성 예측도 등의 결과는 반드시 평가되어야 한다.)</p></li>
+<li><p>여러 자료원 (여러 기관 및 사이트)을 사용할 경우에는 자료원 간의 차이(진단 코딩, 검사 참고치 및 의약품 기록 등)로 인하여 결과의 포착이 달라질 수 있다는 것을 고려해야한다. 예를 들어 동일한 환자라도 전자의무기록에서의 진단 시점과 청구자료의 진단 시점은 차이가 발생할 수 있다.</p></li>
+<li><p>환자의 경험(삶의 질, 질병의 주관적 중증도 평가)을 측정한 결과변수가 포함될 경우에는 프로토콜에 어떻게 측정 방법을 정의하고 구성하였는지, 수행 방법 및 데이터 수집 검증 방법에 대하여 상세히 기록되어야 한다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>공변량</strong></p></li>
+<li><p>공변량은 노출변수나 결과변수는 아니지만 잠재적인 교란변수(confounding) 혹은 효과변경인자(effect modifier)로 작용할 수 있기 때문에 연구의 디자인이나 분석에서 고려되어야 한다.</p></li>
+<li><p>프로토콜 개발 단계에서 교란변수나 효과변경인자의 잠재적인 영향에 대해서 고려되어야 한다. 예를 들어 인구학적 특성(연령, 성별, 인종,민족성)이나 다른 노출(생리활성을 갖는 약용식물), 관련 동반질환에 의한 잠재적인 효과 변경은 연구에서 기록되어야 하며, 관련한 인자들이 자료원에서 가용한지 또한 서술되어야 한다.</p>
+<ul>
+<li><p><strong>교란변수 (Confounding)</strong> : 교란변수는 연관성 측정치가 다른 요인에 의해 왜곡되는 것을 의미한다. 교란변수는 반드시 노출변수와 결과변수 모두와 연관이 있는 변수를 의미하며 인과적 단계에 포함되지 않아야 한다.</p></li>
+<li><p><strong>효과변경인자 (Effect Modifier)</strong> : 효과변경은 단일 노출의 효과가 결과변수에 미치는 효과가 다른 요인에 의존적으로 나타나는 것이다.</p></li>
+<li><p>개념적 정의</p>
+<ul>
+<li><p>공변량의 정의는 주어진 자료원에서 직접적으로 구현될 수 있는지 고려되어야 한다. 만약 공변량이 적절하게 구현될 수 없다면, 연구자들은 대체변수(proxy)를 적절히 고려해야할 수 있다.</p></li>
+</ul>
+</li>
+<li><p>조작적 정의</p>
+<ul>
+<li><p>공변량은 코호트의 특징을 파악하거나 성향점수를 개발하거나, 환자를 층화(stratify) 또는 매칭 (match)하거나, 효과변경을 평가하거나 또는 교란변수를 보정할 때 사용된다.</p></li>
+<li><p>일반적으로 공변량은 관심 노출변수의 시작 기간 이전까지의 기간(baseline)에서 식별되고 평가되지만, 이는 다른 기간에서 평가될 수도 있다. 평가기간은 코딩체계 및 임상실무의 변화, 의료기관 방문 빈도, 연구 주제 등에 따라 적절히 고려되어 정해져야 한다.</p></li>
+<li><p>공변량은 정적 변수 또는 시간에 따라 변동하는 변동변수로서 과거기간이 아닌 관찰기간 동안에도 물론 평가될 수 있다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bias-and-confounding">
+<h3>5.5 Bias and Confounding<a class="headerlink" href="#bias-and-confounding" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>관심 결과에 대한 노출 효과의 타당하고 정밀한 측정값을 얻기 위하여, 두가지 오류를 반드시 고려해야 한다. <strong>임의 오류 (Random error)</strong> 와 달리 <strong>계통오차 (Systematic error)</strong> 는 샘플의 수를 늘리는 것으로 해결되지 않는다. 그래서 이는 연구의 디자인, 실행 및 분석 단계에서 다루어져야 한다.</p></li>
+<li><p>역학적 관점에서 편향과 교란의 개념을 세분화 하는 것은 개별 특징을 이해하고 그것에 대한 효과적인 방법론을 적용가능하게 하므로 유용하다. 연구의 디자인과 분석 단계에 대한 서술에는 제한된 데이터 요소로 인한 정보 편향이나 선택 편향 같은 잠재적인 편향에 대한 평가가 포함되어야한다.</p>
+<ul>
+<li><p><strong>선택 편향(Selection Bias)</strong></p>
+<ul>
+<li><p>예: 전원 편향(referral bias), 자기 선택 편향(self-selection bias), 기존 사용자 편향(prevalent user bias), 추적 손실 편향(loss to follow-up)</p></li>
+<li><p>이러한 다양한 형태의 선택 편향은 연구의 설계 단계에서 해결하는 것이 가장 바람직하지만, 분석 단계에서도 다룰 수 있다.</p></li>
+<li><p>선택 편향의 일반적인 유형 중 하나는 기존 사용자 편향(prevalent user bias)이다.</p>
+<ul>
+<li><p>이는 약물 역학 연구에서 이미 약물을 복용 중인 기존 사용자, 즉 연구 추적이 시작되기 전에 일정 기간 동안 치료를 받고 있던 환자를 포함할 때 발생할 수 있다. 기존 사용자는 연구에서 초기 약물 치료 기간을 이미 ‘생존’한 사람들로, 연구에 포착되지 않은 부분이다.</p></li>
+<li><p>예를 들어, 새로운 약물을 시작하고 안전성 문제를 경험한 후 약물 사용을 중단한 사람들은 연구에 포함되지 않을 수 있으며, 이로 인해 치료를 받은 사람들 사이의 위험이 잠재적으로 과소평가될 수 있다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>정보 편향(Information Bias)</strong></p>
+<ul>
+<li><p>정보 편향은 범주형 변수의 오분류나 연속형 변수의 측정 오류가 있을 때 발생한다.</p></li>
+<li><p>연구 질문과 규제 목적에 따라 일부 연구에서는 어느 정도의 오분류가 있을 수 있으며, 이러한 수용 가능성은 사례별로 결정해야 한다.</p></li>
+<li><p>전반적으로 변수 검증(Validation)의 정도는 필요한 확실성 수준과 연구 해석에 대한 잠재적 오분류의 영향을 고려해 결정되어야 한다. 3장에 논의된 바와 같이, 정량적 편향 분석(quantitative bias analysis)을 활용하여 편향의 방향과 크기를 평가하고, 이를 통해 편향 완화 전략을 수립하며 연구 편향이 연구 해석에 미치는 영향을 이해하는 것이 유용할 수 있다.</p></li>
+</ul>
+</li>
+<li><p><strong>불멸 시간 편향(Immortal time bias)</strong></p>
+<ul>
+<li><p>불멸 시간 편향은 특정 결과가 발생할 수 없는 코호트 추적 기간을 의미한다. 적절한 기준일(index date) 선택이 불멸 시간 편향 및 기타 시간 관련 편향의 위험을 피하는 데 필수적이다. 이 위험은 연구 설계 구조를 통해 완화될 수 있다.</p></li>
+</ul>
+</li>
+<li><p><strong>교란 (Confounding)</strong></p>
+<ul>
+<li><p>연구자들은 연구 질문과 관련된 모든 잠재적 교란 요인을 포착할 수 없는 경우가 많아, 측정되지 않은 교란(unmeasured) 또는 잔여(residual) 교란의 가능성이 발생할 수 있다. 약물 역학 연구에서 일반적으로 고려되는 교란 요인에는 인구통계학적 특성, 치료 적응증, 질병 중증도, 이전 약물 사용, 동반 약물 및 동반 질환, 예후적 특성, 허약함 등이 있으며, 이는 연구 질문에 따라 달라질 수 있다.</p></li>
+<li><p>측정되지 않은 교란을 해결하거나 평가하기 위한 다양한 접근법이 있으며, 여기에는 고차원 성향 점수(high dimensional propensity scores), <strong>음성 대조군(negative controls)</strong>, 그리고 연구 데이터베이스에 측정되지 않은 교란 요인에 대한 데이터를 포함하는 설문 조사 같은 외부 데이터 소스와의 연결이 포함된다.</p></li>
+<li><p>잠재적인 교란 요인의 존재와 영향은 연구 설계 단계에서 고려해야 한다. 비순환 그래프(Directed Acyclic Graphs, DAGs)를 사용하여 변수 간 관계를 이해하고, 종단 연구에서 잠재적 교란 요인과 중재 효과를 식별할 수 있다. 이러한 요인의 영향은 정량적 편향 분석(quantitative bias analysis)을 통해 평가할 수 있으며, 이는 분석 섹션에서 자세히 논의된다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="validation">
+<h3>5.6 Validation<a class="headerlink" href="#validation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>변수의 <strong>타당도(Validity)</strong> 는 연구에서 해당 변수가 조작적 정의에 의해 얼마나 정확하게 측정되는가를 나타낸다. 약물 역학 연구의 내적 타당도을 위해 노출변수, 결과변수 및 주요 공변량의 검증이 중요하다.</p></li>
+<li><p>검증에는 다양한 접근법이 있으며, 데이터 소스에 따라 다를 수 있다.</p>
+<ul>
+<li><p>예: 완전 검증, 부분 검증, 임상 전문가 검토, 환자 청구 내역 검토, 프로필 기록 검토</p></li>
+<li><p>검증 노력은 요구되는 증거 수준에 맞추어 이루어져야 하며, 예를 들어 모든 잠재적 사례 또는 비사례에 대해 결과 변수를 검증하거나 사례 및 비사례를 식별하기 위한 조작적 정의의 성과를 확인할 수 있다.</p></li>
+</ul>
+</li>
+<li><p>연구에 정기적으로 사용되는 데이터베이스의 경우, 주요 변수에 대한 문서화된 검증이 이전에 이루어졌을 수 있다. 그러나 이전 검증 연구를 <strong>외삽(extrapolation)할 경우</strong> , 유병률과 포함 및 제외 기준의 차이, 위험 요인의 분포 및 분석, 이후 보건 의료, 절차 및 코딩의 변화가 미치는 영향을 고려해야 한다.</p></li>
+<li><p>스폰서는 초기 단계에서 규제 기관과 협력하여 부분 검증 혹은 전체 검증 또는 이전에 검증된 정의 채택 등 제안된 검증 접근법에 대해 논의하고 합의해야 한다.</p>
+<ul>
+<li><p>검증 접근법에 대한 정당성은 데이터 소스, 인구 집단, 시간 범위, 성과, 참조 표준을 포함하고, 필요한 증거 수준을 고려하여 제안된 조작적 정의의 적용 가능성에 대한 논의를 포함해야 한다.</p></li>
+</ul>
+</li>
+<li><p>검증 연구는 별도의 프로토콜 하에 수행되어야 한다.</p>
+<ul>
+<li><p>조작적 정의를 검증할 때는 보고할 지표(예: 민감도, 특이도, 양성 예측도, 음성 예측도, 카파 통계)를 미리 명시하고, 이를 어떻게 측정할 것인지를 설명해야 한다.</p></li>
+<li><p>위양성(false-positive)과 위음성(false-negative) 간의 균형을 고려하여 내적 타당성을 뒷받침할 적절한 검증 접근법을 찾아야 한다. 예를 들어, 사례가 드문 경우에는 민감도가 높은 조작적 정의를 선택한 후 모든 잠재적 사례를 검증할 필요가 있을 수 있다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="data-management">
+<h2>6. DATA MANAGEMENT<a class="headerlink" href="#data-management" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>연구를 시작하기 전에 데이터 관리 및 데이터 큐레이션에 대한 계획을 수립해야하며, 연구의 무결성을 유지하기 위해 품질에 미치는 다양한 요인을 파악하고 해결해야 한다.</p></li>
+<li><p>품질의 기준은 관계 법령 및 지역적 규제 요구사항에 따라야 한다. 특히, 데이터셋에 대한 제출이 요구되는 경우 규제 검토를 위하여 파일의 내용, 구조 및 파일 생성 단계에 대한 설명이 포함되어야 하며, 관련 규제 요구에 다라 보관해야한다. 데이터나 문서의 이관과 관련하여서는 장기적인 가독성과 무결성을 유지하기 위한 검증을 받아야한다.</p></li>
+<li><p><strong>데이터 관리 계획 (Data Management Plan, DMP)</strong></p>
+<ul>
+<li><p>데이터 품질 보증 프로세스, 정책 및 절차는 코딩 오류, 데이터 입력, 전송 또는 변환 오류, 의도 및 해석 오류, 부적절한 교육, <strong>데이터 완전성</strong> 및 <strong>데이터 일관성</strong>을 포함한 데이터 품질에 대한 잠재적 위험을 전반적으로 고려해야 한다.</p></li>
+<li><p>데이터의 저장, 관리 및 통계 소프트웨어에 대한 정보가 프로토콜에 포함되어야 한다. 분석 데이터셋을 취득 및 검증하는 과정에 대하여 재현이 가능할 정도로 충분한 세부사항이 기록되어야 한다. 인가된 개인에게만 접근이 가능하도록 하여 데이터 보안은 언제나 유지되어야 한다.</p></li>
+</ul>
+</li>
+</ul>
+<section id="quality-assurance-and-quality-control">
+<h3>품질 보증 및 관리 (Quality Assurance and Quality Control)<a class="headerlink" href="#quality-assurance-and-quality-control" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="data-holder">
+<h3>6.1 Data Holder<a class="headerlink" href="#data-holder" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>데이터 보유 기관은 다음과 같은 QA 및 QC 절차를 포함할 수 있다.</p>
+<ul>
+<li><p><strong>데이터 수집 및 관리의 신뢰성 보장</strong></p></li>
+<li><p>데이터 수집 기간에 수행된 데이터 오류 교정 및 수정에 대한 방법 및 주기</p></li>
+<li><p>관심 결과에 영향을 미칠 수 있는 데이터 품질 및 타당도, 코드 입력 실무의 개정 및 변경사항에 대한 출판물</p></li>
+<li><p>핵심 데이터 요소 관련 변경사항</p></li>
+<li><p>누락 데이터의 범위 및 처리 방법</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="researcher">
+<h3>6.2 Researcher<a class="headerlink" href="#researcher" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>반면, 연구자는 데이터 보유 기관과 품질 절차를 조정하여 데이터의 투명성을 보장하고 데이터의 장/단점에 대한 이해를 도모하며, 규제당국에서 요구하는 품질 표준을 충족할 책임이 있다. 연구자는 또한 다음과 같은 의무를 갖는다.</p>
+<ul>
+<li><p><strong>품질 체계에 대한 전반적인 문서화 의무</strong></p>
+<ul>
+<li><p>데이터 정제, 가공 및 분석용 데이터셋 개발 과정에서의 품질 보장</p></li>
+<li><p>프로토콜 내 데이터의 신뢰성 및 관련성을 결정하는 필수적인 사항과 데이터 수집, 큐레이션, 및 최종 데이터 셋으로의 변환과정에 대한 기록</p></li>
+<li><p>데이터 변경 사항 및 변경 사항이 연구에 미치는 잠재적인 영향</p></li>
+<li><p>분석 프로그래밍에 대한 품질 보장을 위하여 수행되는 코드 검사 및 코드 복제 과정에 대한 기록</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="analysis">
+<h2>7. ANALYSIS<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>통계 분석은 반드시 사전에 정의되어야 하며, 타당성 평가를 통해 얻은 정보를 반영하여 연구 목적을 충족하도록 개발되어야 한다.</p></li>
+<li><p>통계분석계획 (<strong>Statistical Analysis Plan</strong> , SAP)에 대한 개요는 프로토콜에 포함되어야 한다. 전체 SAP은 독립형 문서 또는 프로토콜의 섹션에서 자세히 다루어져야 한다.</p>
+<ul>
+<li><p>일부 연구에서는 데이터 기반으로 분석을 수행할 수 있으나, 사전 계획인지 사후 분석인지 구별되어야 한다.</p>
+<ul>
+<li><p>공변량 선택과 같은 사전 계획된 분석은프로토콜 및 분석 계획에 문서화 되어야 하며, 계획과 실제 수행 내역이 다른 경우에은 최종 보고서에서 기록되어야 한다. 사후 분석은 데이터의 관찰 과정에서 결화의 해석을 용이하게 하기 위하여 수행될 수 있으며, 이 사후분석의 당위성에 대해서는 최종 보고서에서 정당화 되어야한다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>연구자는 연구분석(발생 분석, 기술적 분석, 추론, 민감도 분석, 정량적 편향 분석 등)의 추진계획에 대하여 고려하는 것이 필요하다.</p></li>
+<li><p>다중 데이터베이스 연구를 수행하거나 FDN을 사용할 때는 각 데이터 소스에서 수행되는 독립적인 분석과 메타 분석 기술이 필요할 수 있는 문제를 구별하여서 분석 계획에서 포함할 수 있다.</p></li>
+</ul>
+<section id="statistical-analysis">
+<h3>7.1 Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Primary Analyses</p>
+<ul>
+<li><p>분석 섹션은 가정 및 조건을 포함하여 통계적 분석을 위해 선택한 접근 방식에 대한 설명과 정당성을 설명해야 하는 곳이며, 다음 측면과 요소를 포함할 수 있다.</p>
+<ul>
+<li><p>설명적 분석, 하위 그룹 분석, 추정 방법 및 분석에 필요한 관련 가정, 예상 연구 규모/검정력/통계적 정밀도 추정, 교란 및 편향을 통제하기 위한 계획(예: 오분류, 선택 편향, 정보 편향, 시간 관련 편향 및 결과의 유효성에 대한 영향), 인구 비교성 평가, 민감도 분석, 제1종 오류 통제(예: 순차적 분석의 경우), 대표성 평가 및 누락된 데이터 처리 계획.</p></li>
+<li><p>분석에서 머신 러닝이나 기타 방법을 사용할 것을 제안하는 경우, 사용된 알고리즘의 가정 및 매개변수, 알고리즘을 구축하는 데 정보를 사용한 데이터 소스, 알고리즘이 지도 학습(즉, 전문가의 입력 및 검토 사용) 또는 비지도 학습되었는지 여부, 그리고 방법의 검증과 관련된 측정 항목을 지정해야 한다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Missing Data</strong></p>
+<ul>
+<li><p>연구자는 기본 데이터에 정보가 존재하지 않는 이유를 이해하고 프로토콜과 통계 분석 계획을 개발해야 한다.</p></li>
+<li><p>누락된 데이터를 해결하기 위해 데이터 연결 및/또는 대입(imputation)을 고려하고, 연구 결과에 대한 누락된 데이터 범위의 의미를 해결해야 한다. 누락된 데이터를 특성화하기 위해 설명적 분석을 포함해야 한다.</p>
+<ul>
+<li><p>누락된 데이터에 대한 가정(예: 무작위로 누락, 무작위로 누락되지 않음)을 뒷받침하고 누락된 데이터의 의미를 고려해야 한다. 분석은 통계 분석 계획에 설명된 방법에 따라 누락된 데이터를 해결해야 하며, 연구 결과에 대한 누락된 데이터의 범위와 의미를 설명해야 한다.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sensitivity Analyses</p>
+<ul>
+<li><p>민감도 분석을 계획할 때 각 분석의 강점과 한계와 함께 각 분석에 대한 근거를 제공해야 한다. 민감도 분석은 설계, 추정치, 노출 정의, 결과 정의, 누락된 데이터 및 선택된 데이터 소스의 한계와 같은 분석의 잠재적으로 중요한 가정의 영향을 조사하기 위해 수행해야 한다. 분석은 언급된 불확실성의 정도에 비추어 연구 결과를 더 잘 해석하는 데 도움이 될 수 있다.</p></li>
+<li><p>정량적 편향 분석은 연관성 측정에 대한 잠재적 편향의 영향을 평가한다. 프로토콜은 편향을 정량화하는 데 사용될 지수(예: 민감도, 특이도, 양성[PPV] 및 음성[NPV] 예측도)를 미리 지정하고 관심 변수를 검증할 때 선택된 지수를 측정하는 방법을 설명해야 한다. 편향 조정 효과 추정치의 정밀도는 신뢰 구간을 사용하여 정량화해야 한다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="reporting-and-submission">
+<h2>8. REPORTING AND SUBMISSION<a class="headerlink" href="#reporting-and-submission" title="Permalink to this heading">#</a></h2>
+<section id="reporting-of-adverse-events-adverse-drug-reaction-and-product-quality-complaints">
+<h3>8.1 Reporting of Adverse Events, Adverse Drug Reaction, and Product Quality Complaints<a class="headerlink" href="#reporting-of-adverse-events-adverse-drug-reaction-and-product-quality-complaints" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>연구 수행 중에 발견된 부작용, 약물 부작용 및 제품 품질 불만은 관련 규제 기관에 보고해야 할 수 있다.</p></li>
+<li><p>기타 보고 요구 사항(및 ICH E2D 범위 밖의 당사자)의 경우 해당 법률 및 규정과 적절한 경우 약물 안전 감시 지침을 참조해야한다.</p></li>
+</ul>
+</section>
+<section id="formatting-and-content-of-study-documents-for-submission-to-regulatory-authorities">
+<h3>8.2 Formatting and Content of Study Documents for Submission to Regulatory Authorities<a class="headerlink" href="#formatting-and-content-of-study-documents-for-submission-to-regulatory-authorities" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>스폰서는 규제 기관 제출에 필요한 문서 및 일정을 논의해야 한다. 이러한 문서 양식은 규제 기관마다 다를 수 있으며 타당성 평가, 프로토콜, 분석 계획, 중간 및 최종 보고서를 포함할 수 있다.</p></li>
+<li><p>규제 기관에서 요구하는 특정 형식과 내용이 없는 경우 스폰서는 ISPE/ISPOR의 프로토콜 템플릿(HARPER)과 같이 학회에서 개발한 프레임워크를 가이드로 활용할 수 있다.</p></li>
+</ul>
+</section>
+</section>
+<section id="dissemination-and-communication-of-study-materials-and-findings">
+<h2>9. DISSEMINATION AND COMMUNICATION OF STUDY MATERIALS AND FINDINGS<a class="headerlink" href="#dissemination-and-communication-of-study-materials-and-findings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>연구의 투명성, 재현성 및 과학적 교류 지원을 위해서 규제 요건에 의해 의무화되지 않은 경우에도 연구자는 연구 자료를 공개적으로 사용할 수 있도록 하는 것이 권장된다.</p></li>
+<li><p>프로토콜과 통계 분석 계획은 연구를 시작하기 전에 적절한 레지스트리에 공개하고, 연구 보고서는 완료 시에 공개하는 것을 권장한다.</p></li>
+<li><p>출판 편향(publication bias)을 피하기 위해 연구 목표나 가설과 관련하여 부정적이거나 결론이 나지 않은 연구 결과가 얻어지더라도 결과를 출판하는 것이 권장된다.</p></li>
+<li><p>의학 문헌에서 연구 보고에 대한 권장사항을 담은 가이드라인</p>
+<ul>
+<li><p>The Reporting of studies Conducted using Observational Routinely collected health Data Statement(RECORD-PE)</p></li>
+<li><p>Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly work in Medical Jouranls by ICMJE</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="study-documentation-and-record-retention">
+<h2>10. STUDY DOCUMENTATION AND RECORD RETENTION<a class="headerlink" href="#study-documentation-and-record-retention" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>연구의 계획, 수행 및 결과와 관련된 주요 문서 및 기록은 해당 표준 및 관할 규제기관의 요구 사항을 준수하여 보관해야 한다.</p></li>
+<li><p>시판 후 안전 연구에서 RWD를 활용하는 연구의 주요 원칙은 GCP(특히 1차 데이터의 경우) 및 Good Pharmacoepidemiological Practice(특히 데이터의 2차 사용의 경우)의 원칙과 유사하다.</p></li>
+</ul>
+</section>
+<section id="considerations-in-specific-population">
+<h2>11. CONSIDERATIONS IN SPECIFIC POPULATION<a class="headerlink" href="#considerations-in-specific-population" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>특정(특별) 집단은 종종 사전 승인 임상 연구에 등록되지 않으며, 여기에는 임신 및 수유 중인 사람, 영아, 어린이, 청소년/청년 성인, 노인, 면역 저하 환자, 장애인 및/또는 희귀 질환이 있는 사람이 포함된다. 따라서 시판 후 약물 역학 연구는 이러한 집단에서 약물의 이점/위험 평가를 뒷받침하는 귀중한 정보를 제공할 수 있다.</p></li>
+<li><p>이러한 집단에 대한 연구는 다른 고려 사항(예: 노출 정의, 교란 요인 및 결과) 외에도 연구 집단을 정의할 때 추가적인 고려 사항이 필요할 수 있다. 어려움의 예로는 희귀 질환에 대한 표본 크기가 작음, 노인에 대한 여러 가지 합병증 및 다제 복용, 면역 저하 환자의 경우 또는 질병 특성(예: 기간 및 심각도)을 식별하는 데 어려움이 있다.</p></li>
+</ul>
+</section>
+<section id="pregnancy-studies">
+<h2>11.1 Pregnancy Studies<a class="headerlink" href="#pregnancy-studies" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>임신 관련 연구에서 데이터의 2차 활용에 대한 구체적인 고려사항으로는 임신의 식별, 결과의 복잡성, 임신 주수나 임신 일자에 대한 정보, 모자 결과를 식별하기 위한 검증된 알고리즘의 필요성 등이 있다.</p></li>
+<li><p>해결방법으로 자료원 내 연계(예: 모자 연계) 또는 출생 등록부와 같은 보완적 자료를 활용한 자료원 간 연계가 필요로 할 수 있습니다. 임신 등록부는 노출 시기, 임신 주수, 결과, 공변량에 대한 보다 세부적인 임상 정보를 제공할 수 있지만, 이러한 등록부에는 참여자 등록 및 유지의 어려움, 선택 편향을 포함한 과제가 있다.</p></li>
+<li><p>노출에 대한 이분법적 접근 방식은 임신 중 노출 패턴을 정확히 반영하지 않을 수 있으며, 임신 삼분기(trimester)마다의 접근 방식을 고려해야 한다.</p></li>
+<li><p>위험구간의 정의, 임신 시작 날짜와 임신 시작 날짜 측정, 약물 사용 패턴(예: 시작 및 종료 날짜, 복용량, 빈도, 기간)에 주의를 기울여야 한다.</p></li>
+<li><p>임신 날짜를 추정할 수 있는 임신 주차의 유효한 추정치는 노출 시기를 결정하는 데 중요하며 초음파 또는 실험실 데이터와 같은 연결된 데이터의 가용성이 필요할 수 있다. 노출의 임신 시기에 대한 정확한 정보는 중요한 노출 기간을 식별하고 특정 효과의 생물학적 타당성을 알리는 데 도움이 될 수 있다.</p></li>
+<li><p>반감기가 긴 약물의 경우 임신 직전 기간의 노출 정보도 중요할 수 있다.</p></li>
+<li><p>결과에는 임신 중 모체 건강에 영향을 미치는 결과(예: 자간전증 또는 임신성 당뇨병), 자연 유산, 출산/신생아 결과, 출생 후 수년 동안 지속될 수 있는 아동 발달 결과가 포함될 수 있다.</p></li>
+<li><p>프로토콜은 중증도(예: 주요 선천적 결함)를 포함하여 관심 있는 결과를 정의하기 위한 사전 기준을 명시해야 하며, 많은 결과는 임신 기간 동안 다른 양상으로 나타날 수 있다는 점을 고려해야 한다. 임신 연구의 결과 식별에는 고유한 어려움이 있으며 표준 분류 시스템 사용을 고려해야 한다.</p></li>
+<li><p>조산 및 “임신 연령에 비해 작은 아기”는 레지스트리에서 안정적으로 사용할 수 있지만, 행정 데이터에서는 진단 코드를 통해 식별하거나 임신 연령 및 출생 체중 데이터를 사용하여 계산할 수 있다.</p></li>
+<li><p>데이터 수집 방법에 따라 선천적 결함 감시 레지스트리는 이미 살아있는 출산, 사산/태아 사망 및 선택적 중절에 대해 판결이 내려졌기 때문에 유용하다.</p></li>
+<li><p>주요 선천적 기형은 어머니의 기록, 영아의 기록 또는 둘 다에 기록될 수 있다.</p></li>
+<li><p>분석 계획은 임신 시점과 관련하여 시간에 따라 변하는 공변량을 고려해야 합니다.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ICH_M14_part1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">markdown 예시</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol-development-cont-d">5. PROTOCOL DEVELOPMENT (Cont’d)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exposures-outcomes-covariates">5.4 Exposures, Outcomes, Covariates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-confounding">5.5 Bias and Confounding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation">5.6 Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">6. DATA MANAGEMENT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-assurance-and-quality-control">품질 보증 및 관리 (Quality Assurance and Quality Control)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-holder">6.1 Data Holder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#researcher">6.2 Researcher</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">7. ANALYSIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">7.1 Statistical Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-and-submission">8. REPORTING AND SUBMISSION</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-of-adverse-events-adverse-drug-reaction-and-product-quality-complaints">8.1 Reporting of Adverse Events, Adverse Drug Reaction, and Product Quality Complaints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-and-content-of-study-documents-for-submission-to-regulatory-authorities">8.2 Formatting and Content of Study Documents for Submission to Regulatory Authorities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissemination-and-communication-of-study-materials-and-findings">9. DISSEMINATION AND COMMUNICATION OF STUDY MATERIALS AND FINDINGS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-documentation-and-record-retention">10. STUDY DOCUMENTATION AND RECORD RETENTION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations-in-specific-population">11. CONSIDERATIONS IN SPECIFIC POPULATION</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregnancy-studies">11.1 Pregnancy Studies</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
