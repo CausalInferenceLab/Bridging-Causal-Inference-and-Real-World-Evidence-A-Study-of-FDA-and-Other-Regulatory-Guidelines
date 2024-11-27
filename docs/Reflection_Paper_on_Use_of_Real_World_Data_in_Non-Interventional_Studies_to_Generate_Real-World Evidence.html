@@ -1,0 +1,1300 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Title &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Reflection_Paper_on_Use_of_Real_World_Data_in_Non-Interventional_Studies_to_Generate_Real-World Evidence';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="markdown 예시" href="markdown-example.html" />
+    <link rel="prev" title="General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II" href="ICH_M14_part2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part1.html">Causal Inference Brave and True 1-2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal_inference_part2.html">Causal Inference Chapter 3-4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Framework_for_FDAs_RWE_Program.html">Framework for FDA’s Real-World Evidence Program</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Framework_for_FDAs_RWE_Program_2.html">Framework for FDA’s Real-World Evidence Program2</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ICH_M14_part1.html">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICH_M14_part2.html">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Title</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/Reflection_Paper_on_Use_of_Real_World_Data_in_Non-Interventional_Studies_to_Generate_Real-World Evidence.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Reflection_Paper_on_Use_of_Real_World_Data_in_Non-Interventional_Studies_to_Generate_Real-World Evidence.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Title</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Title</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2. Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-obligations-and-regulatory-requirements">3. Legal Obligations and Regulatory Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-design">4. Study Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-considerations">4.1 General Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment">4.2 Feasibility Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studeis-with-descriptive-objectives">4.3 Studeis with Descriptive Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studies-with-causal-objectives">4.4 Studies with Causal Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-confounding">4.5 Bias and Confounding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">4.5.1 Selection bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bias">4.5.2 Information bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-related-bias">4.5.3 Time-related bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding">4.5.4 Confounding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-modification">4.6 Effect Modification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governance-and-transparency">5. Governance and transparency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#governance">5.1 Governance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency">5.2 Transparency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality">6. Data quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability">6.1 Reliability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance">6.2 Relevance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-database-studeis">6.3 Multi-database Studeis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-linkage">6.4 Data Linkage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-frameworks">6.5 Data Quality Frameworks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">7. Statistical Analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing-estimation-and-precision">7.1 Hypothesis testing, estimation and precision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-analyses">7.2 Time-dependent analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stratified-analyses">7.3 Stratified analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analyses">7.4 Sensitivity analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">7.5 Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneity">7.6 Heterogeneity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="title">
+<h1>Title<a class="headerlink" href="#title" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Reflection Paper on Use of Real World Data in Non-Interventional Studies to Generate Real-World Evidence</p></li>
+</ul>
+</section>
+<section id="information">
+<h1>Information<a class="headerlink" href="#information" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Link</p>
+<ul>
+<li><p><a class="reference external" href="https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-real-world-data-non-interventional-studies-generate-real-world-evidence_en.pdf">https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-real-world-data-non-interventional-studies-generate-real-world-evidence_en.pdf</a></p></li>
+</ul>
+</li>
+<li><p>Topic</p>
+<ul>
+<li><p>EMA guidance</p></li>
+<li><p>RWE, RWD</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>RWD를 활용한 비개입 연구(NIS, Non-interventional studies)에 대한 방법론을 논의함</p>
+<ul>
+<li><p>규제기관에 제출을 위한 실사용증거(RWE, real world evidence)를 생성하는 NIS에 대해 다룸</p></li>
+</ul>
+</li>
+<li><p>비개입 연구 (NIS)</p>
+<ul>
+<li><p>Clinical Trial과 다름</p></li>
+<li><p>Clinical Trial</p>
+<ul>
+<li><p>유럽 국가(Member State) 내에서의 normal clinical practice에 해당하지 않음</p></li>
+<li><p>미리 환자에 대한 치료 전략이 정해짐</p></li>
+<li><p>의약품의 시판 허가를 얻기 위한 benefits and risk 평가를 제공하는 main source</p></li>
+</ul>
+</li>
+<li><p>RWD</p>
+<ul>
+<li><p>Routine clinical practice에서 얻어지는 데이터</p></li>
+</ul>
+</li>
+<li><p>RWE</p>
+<ul>
+<li><p>RWD의 분석에서 도출되는 증거(evidence)</p></li>
+</ul>
+</li>
+<li><p>NIS 특성</p>
+<ul>
+<li><p>주로 시판 허가 후의 안전성 평가(post-authorizsation safety asessment)에 해당</p></li>
+<li><p>무작위배정 없음</p></li>
+<li><p>통제되지 않는 조건(uncontrolled condition)</p></li>
+<li><p>비표준화된 치료(non-standardised treatments)</p></li>
+<li><p>데이터 품질과 온전성에 대한 불확실성(uncertainties regarding data quality and completeness)</p></li>
+</ul>
+</li>
+<li><p>RWD를 활용한 NIS 예시</p>
+<ul>
+<li><p>시판 후 모니터링 수행 (post market monitoring)</p></li>
+<li><p>약물 사용 패턴 조사 (patterns of drug utilization)</p></li>
+<li><p>질병 역학 조사(to characterise disease epidemiology)</p></li>
+<li><p>outcome measure 확인(validate outcome measure)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scope">
+<h2>2. Scope<a class="headerlink" href="#scope" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>규제기관 제출을 위해 RWE를 RWD를 활용하여 생성하는 NIS의</p>
+<ul>
+<li><p>디자인, 수행, 분석에 대해 다룸</p></li>
+</ul>
+</li>
+<li><p>Suitability of RWD for a regulatory purpose</p>
+<ul>
+<li><p>데이터 품질</p>
+<ul>
+<li><p>data reliability</p></li>
+<li><p>relevance</p></li>
+</ul>
+</li>
+<li><p>Chapter 6에서 자세히 다룸</p></li>
+</ul>
+</li>
+<li><p>목적에 따른 NIS 구분</p>
+<ul>
+<li><p>descriptive objective vs causal objectives</p></li>
+<li><p>연구 디자인 설정에 이 구분이 중요함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="legal-obligations-and-regulatory-requirements">
+<h2>3. Legal Obligations and Regulatory Requirements<a class="headerlink" href="#legal-obligations-and-regulatory-requirements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>규제 절차를 위해 RWD를 활용한 NIS의 적절성</p>
+<ul>
+<li><p>초기 단계(early stage)에서 규제당국과 논의되어야 함</p></li>
+<li><p>이 적절성은 case-by-case로 정해짐</p></li>
+</ul>
+</li>
+<li><p>Legal Obligations</p>
+<ul>
+<li><p><strong>Regulation (EU) No 536/2014</strong> on clinical trials on medicinal products for human use.</p></li>
+<li><p><strong>Regulation (EC) No 726/2004</strong> laying down Community procedures for the authorisation and supervision of medicinal products for human and veterinary use and establishing a European Medicines Agency.</p></li>
+<li><p><strong>Commission Implementing Regulation (EU) No 520/2012</strong> on the performance of 136 pharmacovigilance activities.</p></li>
+<li><p><strong>Directive 2001/83/EC</strong> on the Community code relating to medicinal products for human use.</p></li>
+<li><p><strong>Regulation (EU) 2016/679</strong> on the protection of natural persons with regard to the processing of personal data and on the free movement of such data.</p></li>
+</ul>
+</li>
+<li><p>Regulatory requirements</p>
+<ul>
+<li><p>Guideline on good pharmacovigilance practices.</p></li>
+<li><p>Scientific guidance on post-authorisation efficacy studies</p></li>
+<li><p>Post-authrisation efficacy studies: Questions and Answers</p></li>
+<li><p>Guideline on registry-based studies</p></li>
+<li><p>Good Practice Guide for the use of the Metadata Catalogue of Real-World Data Sources</p></li>
+<li><p>EMA and Heads of Medicines Agencies Data Quality Framework for EU medicines regulations</p></li>
+<li><p>ICH E9(R1) Addendum on Estimands and Sensitivity Analysis in Clinical Trials to the Guideline on Statistical principles for Clinical Trial.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="study-design">
+<h2>4. Study Design<a class="headerlink" href="#study-design" title="Permalink to this heading">#</a></h2>
+<section id="general-considerations">
+<h3>4.1 General Considerations<a class="headerlink" href="#general-considerations" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>NIS의 디자인</p>
+<ul>
+<li><p>연구 목적(research question)에 맞게 reliable evidence를 얻기 위해 설정되어야 함</p></li>
+<li><p>RWD 활용이 적절할 지에 대한 근거 입증은 신청자(applicant) 가 제출해야함</p></li>
+<li><p>Research Question</p>
+<ul>
+<li><p>목표한 regulatory questions에 맞게 자세하게 설정해야 함</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="feasibility-assessment">
+<h3>4.2 Feasibility Assessment<a class="headerlink" href="#feasibility-assessment" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>연구계획서 작성 전에 수행</p></li>
+<li><p>Feasibility assessment</p>
+<ul>
+<li><p>RWD source에 대한 reliability and relevance 평가</p></li>
+<li><p>선정 제외기준에 대한 논의</p>
+<ul>
+<li><p>sample size 관련 영향 등</p></li>
+</ul>
+</li>
+<li><p>연구 평가변수(study outcome)에 대한 incidence</p></li>
+<li><p>feasibility를 늘릴 수 있는 방안(가능한 경우)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="studeis-with-descriptive-objectives">
+<h3>4.3 Studeis with Descriptive Objectives<a class="headerlink" href="#studeis-with-descriptive-objectives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>목적</p>
+<ul>
+<li><p>단일 시점 또는 시간에 따라서 환자군 특성(patient characteristics)을 관찰, 평가하려고 함</p>
+<ul>
+<li><p>예시: risk assessment or prognosis, diagnosis and service evaluation</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Study Population</p>
+<ul>
+<li><p>Real world target population을 대표할 수 있도록 해야 함</p></li>
+<li><p>RWD가 수집되는 환경 설정이 중요</p>
+<ul>
+<li><p>healthcare setting (1,2차 진료기관 등 )</p></li>
+<li><p>the healthcare system of the countries</p></li>
+<li><p>지역적 차이(regional differences) rhfu</p></li>
+<li><p>coding terminologies, CDM 사용 설정 등도 고려</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="studies-with-causal-objectives">
+<h3>4.4 Studies with Causal Objectives<a class="headerlink" href="#studies-with-causal-objectives" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>치료 효과의 인과적 해석(causal interpretation)</p>
+<ul class="simple">
+<li><p>비교군(comparator) 설정이 필요</p></li>
+</ul>
+</li>
+<li><p>TTE (Target Trial Emulation) 프레임워크</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>hypothetical(target) trial의 핵심요소의 구상화(envision)</p></li>
+</ol>
+<ul class="simple">
+<li><p>its target population</p></li>
+<li><p>eligibility criteria</p></li>
+<li><p>assignment procedure</p></li>
+<li><p>treatment conditions</p></li>
+<li><p>causal contrasts(i.e., the estimand)</p></li>
+<li><p>analysis plan</p></li>
+</ul>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>NIS를 최대한 hypothetical trial과 유사하게 디자인함</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>TTE가 유용한 이유</p>
+<ul class="simple">
+<li><p>인과성 평가를 위한 NIS의 디자인에 대해 구조화되고 일관적인 프레임워크를 제공함</p></li>
+<li><p>연구자들이 potential bias를 고려하고 이런 bias를 다룰 방법을 제안할 수 있게 함</p></li>
+<li><p>연구 디자인에서 높은 수준의 투명성이 필요함</p>
+<ul>
+<li><p>TTE의 활용이 도움됨</p></li>
+</ul>
+</li>
+<li><p>NIS의 internal validity를 높일 수 있음</p></li>
+</ul>
+</li>
+<li><p>무작위배정과 맹검 과정이 없는 것은 여전히 문제</p>
+<ul class="simple">
+<li><p>selection bias</p></li>
+<li><p>information bias</p></li>
+<li><p>confounding</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bias-and-confounding">
+<h3>4.5 Bias and Confounding<a class="headerlink" href="#bias-and-confounding" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>NIS 디자인 단계에서 여러 bias와 confounding을 식별하고 처리하는 것이 중요함</p></li>
+</ul>
+<section id="selection-bias">
+<h4>4.5.1 Selection bias<a class="headerlink" href="#selection-bias" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>디자인 단계에서 아래 사항들 고려</p>
+<ul>
+<li><p>feasibility 평가 단계에서 specific data source 선택의 근거 고려</p></li>
+<li><p>선정 제외 기준을 적절히 정의</p>
+<ul>
+<li><p>계획서에 미리 반영</p></li>
+<li><p>selection criteria를 잘 선정</p>
+<ul>
+<li><p>imbalance가 있지 않도록</p></li>
+<li><p>e.g., vaccine seeking behaviors</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>new drug user design 고려</p>
+<ul>
+<li><p>both prevalent and incident drug user 대신 설정</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="information-bias">
+<h4>4.5.2 Information bias<a class="headerlink" href="#information-bias" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Information bias가 생기는 원인</p>
+<ul>
+<li><p>misclassification bias라고도 함</p></li>
+<li><p>key study variable이 잘못 측정, 분류되었을 경우</p>
+<ul>
+<li><p>exposure, outcome, confouders 이 해당</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>고려 사항</p>
+<ul>
+<li><p>각 연구 디자인 단계마다 RWD source에 적용되는 데이터 수집 또는 추출(extraction) 단계를 식별하여 고려</p></li>
+<li><p>각 단계 마다 data source가 아래 사항을 충분히 포함하고 있는지 고려</p>
+<ul>
+<li><p>exposures</p>
+<ul>
+<li><p>dose, duration, time period, indication</p></li>
+</ul>
+</li>
+<li><p>outcomes</p>
+<ul>
+<li><p>diagnosis code</p></li>
+<li><p>disease severity</p></li>
+<li><p>date of occurence</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>이전에 수행된 validation study</p></li>
+<li><p>differential misclasssification</p>
+<ul>
+<li><p>can lead to biases in any direction</p></li>
+</ul>
+</li>
+<li><p>non-differential misclassification</p>
+<ul>
+<li><p>exposure와 outcome의 association을 null-value 쪽으로 이끔</p></li>
+<li><p>superiority trial에서 규제기관 입장에서는 preferable하다고 봄</p>
+<ul>
+<li><p>superiority를 보이기 어려운 쪽의 bias이므로 conservative함</p></li>
+</ul>
+</li>
+<li><p>연구 디자인 단계에서는 우선 피해야함</p>
+<ul>
+<li><p>non-differential 일지 확인하기 어려움</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>studies with causal objectives에서의 영향</p>
+<ul>
+<li><p>연구 목적에 큰 영향을 받음</p>
+<ul>
+<li><p>superiority, non-inferiority, efficacy, safety</p></li>
+</ul>
+</li>
+<li><p>potential misclassification에 대해 미리 식별하고 있는 것이 중요</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="time-related-bias">
+<h4>4.5.3 Time-related bias<a class="headerlink" href="#time-related-bias" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>time related bias</p>
+<ul>
+<li><p>e.g., immortal time bias</p></li>
+<li><p>시간이 지남에 따라 exposure status가 바뀔 수 있어 non-exposed/exposed person-time의 관측 시간(the allocation of time periods of observations)이 부정확한 bias</p></li>
+<li><p>권고사항</p>
+<ul>
+<li><p>연구 디자인 단계에서, 아래 사항을 미리 설정함</p>
+<ul>
+<li><p>the timing of study entry</p></li>
+<li><p>start of treatment</p></li>
+<li><p>change of patient exposure or outcome status</p></li>
+<li><p>plan the data collection or extraction of important dates</p></li>
+</ul>
+</li>
+<li><p>risk 평가의 경우 follow-up 시점에 여유를 둠</p></li>
+<li><p>설정한 가정(assumptions)에 대한 민감도 분석(sensitivity analyses) 계획하기</p></li>
+<li><p>target trial emulation framework를 고려</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="confounding">
+<h4>4.5.4 Confounding<a class="headerlink" href="#confounding" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>연구 디자인 단계에서 고려되어야 함</p></li>
+<li><p>고려사항</p>
+<ul>
+<li><p>potential confounders를 질환에 대한 지식, 이전 연구들로부터 미리 식별</p>
+<ul>
+<li><p>연구에 포함될 data collection or extraction 계획에 반영함</p></li>
+</ul>
+</li>
+<li><p>unmesuared confounders를 미리 식별하는 것이 특히 중요함</p></li>
+<li><p>potential confounding을 고려할 분석 방법</p>
+<ul>
+<li><p>계획서나 분석 계획에 미리 명시함</p></li>
+</ul>
+</li>
+<li><p>For studies with causal objectives</p>
+<ul>
+<li><p>활성 대조군(use of active comparator) 적용이 선호되어야 함</p>
+<ul>
+<li><p>non-pharmacological comparator or non-user comparator보다 potential confounding을 줄일 수 있음</p></li>
+</ul>
+</li>
+<li><p>Control exposure, control outcome 포함을 고려해야 함</p>
+<ul>
+<li><p>use of negative control exposure/outcome</p>
+<ul>
+<li><p>not be causally associated with outcome/exposure</p></li>
+</ul>
+</li>
+<li><p>use of positive control exposure/outcome</p>
+<ul>
+<li><p>known to be causally associated with outcome/exposure</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="effect-modification">
+<h3>4.6 Effect Modification<a class="headerlink" href="#effect-modification" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In studies with causal objectives</p>
+<ul>
+<li><p>연구 디자인 단계에서 고려되어야 함</p></li>
+<li><p>data source에서 relevant data가 이용가능할 지를 확인해야 함</p></li>
+<li><p>effect modification을 볼 수 있을 정도로 충분한 sample size 확보가 필요함</p></li>
+</ul>
+</li>
+<li><p>Study population characteristics이 영향을 미칠 수 있을 경우</p>
+<ul>
+<li><p>treatment effect estimate 등에 영향을 주면</p>
+<ul>
+<li><p>연구의 generalisability가 힘듬</p></li>
+</ul>
+</li>
+<li><p>연구코호트의 특성과 다른 정보(published research 또는 National statistics 등)에서 확인되는 target population의 특성 비교가 필요함</p></li>
+<li><p>민감도 분석을 관련된 여러 특성들(relevant characteristics)에 대해 진행하여 이런 effect를 측정할 수 있어야 함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="governance-and-transparency">
+<h2>5. Governance and transparency<a class="headerlink" href="#governance-and-transparency" title="Permalink to this heading">#</a></h2>
+<section id="governance">
+<h3>5.1 Governance<a class="headerlink" href="#governance" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The study governance는 아래에 명시된 원칙을 따른다</p>
+<ul>
+<li><p>EnCepp Code of Conduct</p></li>
+<li><p>the ADVANCE Code of Conduct</p>
+<ul>
+<li><p>for vaccines</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="transparency">
+<h3>5.2 Transparency<a class="headerlink" href="#transparency" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The main tools for the transparency of NIS</p>
+<ul>
+<li><p>EMA-HMA Catalogue of data sources</p></li>
+<li><p>EMA-HMA Catalogue of Non-interventional Studies</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="data-quality">
+<h2>6. Data quality<a class="headerlink" href="#data-quality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>RWD의 quality를 평가하는 것은 매우 중요</p></li>
+</ul>
+<section id="reliability">
+<h3>6.1 Reliability<a class="headerlink" href="#reliability" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>데이터가 관련된 medical concepts를 잘 대표(represent)하는 지에 대한 개념</p></li>
+<li><p>속성</p>
+<ul>
+<li><p>complete, trustworthy, crdible</p></li>
+</ul>
+</li>
+<li><p>Data quality framework를 활용하여 평가 및 기록함</p></li>
+<li><p>Result of the evaluation of reliability</p>
+<ul>
+<li><p>study protocol에 기록</p>
+<ul>
+<li><p>ANNEX 또는 linked document의 형태</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Information on the standard data quality management</p>
+<ul>
+<li><p>RWD source에 적용되어야 함</p></li>
+<li><p>data cleaning, extraction, transformation 단계 등</p></li>
+<li><p>data quality checks</p>
+<ul>
+<li><p>logical inconsistencies, erroneous, missing, out-of-range values 에 대해 확인</p></li>
+<li><p>remedial action도 기술</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="relevance">
+<h3>6.2 Relevance<a class="headerlink" href="#relevance" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>연구 질문에 대해 아래 사항들이 활용가능할 지에 대한 개념</p>
+<ul>
+<li><p>key data elements(exposure, outcomes, covariates)</p></li>
+<li><p>adequate size of the population</p></li>
+<li><p>the population is representative</p>
+<ul>
+<li><p>and of sufficient coverage of the target population</p></li>
+</ul>
+</li>
+<li><p>appropriate study design</p></li>
+</ul>
+</li>
+<li><p>권고사항</p>
+<ul>
+<li><p>연구마다 relevance가 다름</p>
+<ul>
+<li><p>feasibility analysis 단계 및 protocol에서 논의 되어야 함</p></li>
+<li><p>HARPER protocol template</p></li>
+</ul>
+</li>
+<li><p>summary statistics of important variables을 제시</p>
+<ul>
+<li><p>from the literature or other sources</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="multi-database-studeis">
+<h3>6.3 Multi-database Studeis<a class="headerlink" href="#multi-database-studeis" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>multi-database studies가 증가하고 있음</p>
+<ul>
+<li><p>RWD source가 많아짐</p></li>
+</ul>
+</li>
+<li><p>권고 사항</p>
+<ul>
+<li><p>data source 및 sample size 증가하더라도</p>
+<ul>
+<li><p>quality requirement를 낮춰서는 안됨</p></li>
+</ul>
+</li>
+<li><p>각 RWD source의 reliability and relevance에 대한 정보는 각각 제시해야 함</p></li>
+<li><p>각 source 간의 heterogeneity에 대해 정성, 정량 평가를 제시해야 함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="data-linkage">
+<h3>6.4 Data Linkage<a class="headerlink" href="#data-linkage" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>여러 data source의 연결이 필요한 경우가 있음</p>
+<ul>
+<li><p>genetic data, mother-child data</p></li>
+<li><p>data from different registries using a unique patient identifier</p></li>
+</ul>
+</li>
+<li><p>Study protocol에 아래 사항을 기술함</p>
+<ul>
+<li><p>the data elements used to link the data</p></li>
+<li><p>the linkage methodology</p>
+<ul>
+<li><p>description of how the performance of the matching will be measured</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="data-quality-frameworks">
+<h3>6.5 Data Quality Frameworks<a class="headerlink" href="#data-quality-frameworks" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>권고사항</p>
+<ul>
+<li><p>quality frame work</p>
+<ul>
+<li><p>사용한 data quality framework를 명시하고 규제당국에 결과를 제시함</p>
+<ul>
+<li><p>e.g., OHDSI network for databases conforming to the OMOP common data model</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="statistical-analyses">
+<h2>7. Statistical Analyses<a class="headerlink" href="#statistical-analyses" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>미리 작성된 통계 계획에 따라 통계 분석을 수행해야 함</p></li>
+</ul>
+<section id="hypothesis-testing-estimation-and-precision">
+<h3>7.1 Hypothesis testing, estimation and precision<a class="headerlink" href="#hypothesis-testing-estimation-and-precision" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>For NIS, overall, subgroup에 대해 아래 값들을 제시하는 것이 중요</p>
+<ul>
+<li><p>use of estimates quantifying the magnitude of the effect</p></li>
+<li><p>and of confidence intervals describing the precion of these estimates</p></li>
+</ul>
+</li>
+<li><p>large RWD sources 기반으로 한 NIS에서, 통계 분석에 대해</p>
+<ul>
+<li><p>integrated evaluation을 하는 것이 중요함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="time-dependent-analyses">
+<h3>7.2 Time-dependent analyses<a class="headerlink" href="#time-dependent-analyses" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>time-dependent exposure와 confounding에 대해</p>
+<ul>
+<li><p>study entry until end of follow-up</p>
+<ul>
+<li><p>각 exposure category에 대해 명확히 정의</p></li>
+</ul>
+</li>
+<li><p>연구 질문에 맞게 미리 계획</p></li>
+</ul>
+</li>
+<li><p>treatment switch 발생할 수 있음에 대해 미리 고려</p></li>
+</ul>
+</section>
+<section id="stratified-analyses">
+<h3>7.3 Stratified analyses<a class="headerlink" href="#stratified-analyses" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>층화 분석</p>
+<ul>
+<li><p>미리 계획해야 함</p>
+<ul>
+<li><p>sensitivity analyses에 반영</p></li>
+</ul>
+</li>
+<li><p>multi-database studies</p>
+<ul>
+<li><p>robustness of the results across important subgroups/datasets 입증에 도움</p></li>
+</ul>
+</li>
+<li><p>규제 당국자가 추가적인 층화분석을 요청할 수도 있음</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sensitivity-analyses">
+<h3>7.4 Sensitivity analyses<a class="headerlink" href="#sensitivity-analyses" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>민감도 분석</p>
+<ul>
+<li><p>potential impact of bias, of choices made in the study design, or assumptions made in the analysis를 평가</p></li>
+<li><p>통계 분석 계획에 미리 명시되어야 함</p></li>
+<li><p>Causal objective 연구의 경우</p>
+<ul>
+<li><p>ICH E9(R1) Addendum on Estimands and Sensitivity Analysis in Clinical Trials 참조</p></li>
+</ul>
+</li>
+<li><p>미리 규제당국자와 연구 초반부터 협의가 필요함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="missing-data">
+<h3>7.5 Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>결측치</p>
+<ul>
+<li><p>bias and confounding 초래할 수 있음</p></li>
+</ul>
+</li>
+<li><p>권고사항</p>
+<ul>
+<li><p>연구 계획서와 통계분석 계획서에 결측치 처리 방법 기재</p></li>
+<li><p>결측치와 결측치 처리 방법에 대한 근거를 자세히 제시</p></li>
+<li><p>민감도 분석 사용을 고려</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="heterogeneity">
+<h3>7.6 Heterogeneity<a class="headerlink" href="#heterogeneity" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>여러 요인들이 heterogeneity에 영향을 줄 수 있음</p></li>
+<li><p>권고사항</p>
+<ul>
+<li><p>연구 계획서에 data source, study population 간의 차이에 대해 기술하고 어떻게 처리할 지에 대해 미리 제시</p></li>
+<li><p>연구 결과 합성(evidence synthesis)에 heterogeneity 관리를 위해 적용할 quantitative management 방법을 통계 분석 계획에 논의함</p></li>
+<li><p>forest plot 등의 시각화 방법을 활용하여 결과를 평가</p></li>
+<li><p>베이지언 모형을 evidence synthesis에 활용한 경우, key model parameters의 full posterior distribution 및 이런 poterior에 대한 relevant summaries를 제시하도록 함</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ICH_M14_part2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">General Principles on Plan, Design and Analysis of Pharmacoepidemiological Studies That Utilize Real-World Data for Safety Assessment of Medicines - Part II</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">markdown 예시</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Title</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2. Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-obligations-and-regulatory-requirements">3. Legal Obligations and Regulatory Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-design">4. Study Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-considerations">4.1 General Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment">4.2 Feasibility Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studeis-with-descriptive-objectives">4.3 Studeis with Descriptive Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studies-with-causal-objectives">4.4 Studies with Causal Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-confounding">4.5 Bias and Confounding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">4.5.1 Selection bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bias">4.5.2 Information bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-related-bias">4.5.3 Time-related bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding">4.5.4 Confounding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-modification">4.6 Effect Modification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governance-and-transparency">5. Governance and transparency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#governance">5.1 Governance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency">5.2 Transparency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality">6. Data quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability">6.1 Reliability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance">6.2 Relevance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-database-studeis">6.3 Multi-database Studeis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-linkage">6.4 Data Linkage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-frameworks">6.5 Data Quality Frameworks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">7. Statistical Analyses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing-estimation-and-precision">7.1 Hypothesis testing, estimation and precision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-analyses">7.2 Time-dependent analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stratified-analyses">7.3 Stratified analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analyses">7.4 Sensitivity analyses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">7.5 Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneity">7.6 Heterogeneity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
