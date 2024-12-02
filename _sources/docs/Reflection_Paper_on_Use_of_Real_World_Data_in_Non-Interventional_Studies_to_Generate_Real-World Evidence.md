@@ -80,7 +80,7 @@
 		- sample size 관련 영향 등 
 	- 연구 평가변수(study outcome)에 대한 incidence
 	- feasibility를 늘릴 수 있는 방안(가능한 경우)
-#### 4.3 Studeis with Descriptive Objectives
+#### 4.3 Studies with Descriptive Objectives
 - 목적
 	- 단일 시점 또는 시간에 따라서 환자군 특성(patient characteristics)을 관찰, 평가하려고 함 
 		- 예시: risk assessment or prognosis, diagnosis and service evaluation 
@@ -89,7 +89,7 @@
 	- RWD가 수집되는 환경 설정이 중요 
 		- healthcare setting (1,2차 진료기관 등 )
 		- the healthcare system of the countries 
-		- 지역적 차이(regional differences) rhfu
+		- 지역적 차이(regional differences) 고려
 		- coding terminologies, CDM 사용 설정 등도 고려 
 #### 4.4 Studies with Causal Objectives
 - 치료 효과의 인과적 해석(causal interpretation)
@@ -253,7 +253,7 @@
 		- description of how the performance of the matching will be measured
 #### 6.5 Data Quality Frameworks
 - 권고사항
-	- quality frame work
+	- quality framework
 		- 사용한 data quality framework를 명시하고 규제당국에 결과를 제시함
 			- e.g., OHDSI network for databases conforming to the OMOP common data model
 
