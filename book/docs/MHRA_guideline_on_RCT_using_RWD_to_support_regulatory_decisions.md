@@ -1,7 +1,8 @@
 ## MHRA guideline on randomised controlled trials using real-world data to support regulatory decisions
+작성자 : 이현빈
 * MHRA (Medicines & Healthcare products Regulatory Agency): 영국 
 
-### 작성자 : 이현빈
+
 
 ###### 1. Overview
 - RWD를 활용한 의약품 무작위대조군 연구(randomised, controlled clinical trial) 시행을 위한 스폰서(의뢰사) 가이드라인
