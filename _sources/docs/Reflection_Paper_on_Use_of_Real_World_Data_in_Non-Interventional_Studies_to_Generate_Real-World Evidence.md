@@ -1,5 +1,5 @@
 ## Reflection Paper on Use of Real World Data in Non-Interventional Studies to Generate Real-World Evidence
-작성자 : 곽수영
+작성자 : [곽수영](https://www.linkedin.com/in/systat/)
 ### Title
 - Reflection Paper on Use of Real World Data in Non-Interventional Studies to Generate Real-World Evidence
 ### Information
