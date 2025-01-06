@@ -1,5 +1,5 @@
-## MHRA Guideline on Randomised Controlled Trials Using Real-World Data to Support Regulatory Decisions published 16 Dec 2021
-작성자: [이승미]
+## MHRA Guideline on Randomised Controlled Trials Using Real-World Data to Support Regulatory Decisions_seung_mi_Lee
+작성자: [이승미](https://www.linkedin.com/in/seung-mi-lee-b7600594/)
  
 링크 : https://www.gov.uk/government/publications/mhra-guidance-on-the-use-of-real-world-data-in-clinical-studies-to-support-regulatory-decisions/mhra-guideline-on-randomised-controlled-trials-using-real-world-data-to-support-regulatory-decisions
 
