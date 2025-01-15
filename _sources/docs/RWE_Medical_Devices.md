@@ -1,6 +1,7 @@
 ## Use of Real-World Evidence to Support Regulatory Decision-Making for Medical Devices
 작성자 : [박상호](https://www.linkedin.com/in/shstat1729/)
-### Title
+
+## Title
 - Use of Real-World Evidence to Support Regulatory Decision-Making for Medical Devices
 
 ## Introduction and Scope
@@ -27,13 +28,13 @@
 - FDA는 RWE를 생성하는 데 사용된 RWD의 품질이 특정 규제 결정을 알리거나 지원하기에 충분하다고 판단되면 의료기기에 대한 규제 의사 결정을 지원하기 위해 RWE를 사용하는 것을 고려할 것이다.
 - 특정 규제 결정에 RWD를 사용하려면 RWD의 강점과 한계, 그리고 이러한 특성이 관련성 및 신뢰성 요소에 어떤 영향을 미치는지 이해해야 한다.
 - Example
-- Generating hypotheses for clinical studies
-- Historical controls, a prior, one source of data in a hierarchical model or a hybrid data synthesis
-- Supporting device approvals
-- Expanding device labeling
-- Public health surveillance
-- Post-approval studies
-- Supporting summary reports
+	- Generating hypotheses for clinical studies
+	- Historical controls, a prior, one source of data in a hierarchical model or a hybrid data synthesis
+	- Supporting device approvals
+	- Expanding device labeling
+	- Public health surveillance
+	- Post-approval studies
+	- Supporting summary reports
 
 ### Application of Investigational Device Exemption (IDE) Requirements in 21 CFR 812 to the Collection of RWD
 - 임상 조사를 시작하기 전에 승인된 IDE가 필요하다. Investigation (연구)는 '장치의 안전성 또는 유효성을 결정하기 위해 한 명 이상의 피험자를 대상으로 하는 임상 조사 또는 연구'로 정의된다.
